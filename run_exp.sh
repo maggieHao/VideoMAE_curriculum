@@ -1,0 +1,2 @@
+bash /home/maggie/VideoMAE_curriculum/scripts/kinetics/videomae_vit_base_patch16_224_tubemasking_ratio_0.9_epoch_1600/finetune.sh
+bash /home/maggie/VideoMAE_curriculum/scripts/kinetics/videomae_vit_base_patch16_224_tubemasking_ratio_0.9_epoch_1600/finetune.sh
