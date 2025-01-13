@@ -99,6 +99,7 @@ def train_one_epoch(model: torch.nn.Module, data_loader: Iterable, optimizer: to
 
         if lr_scheduler is not None:
             lr_scheduler.step_update(start_steps + step)
+
     # gather the stats from all processes
     metric_logger.synchronize_between_processes()
     print("Averaged stats:", metric_logger)

@@ -44,6 +44,8 @@ class SSVideoClsDataset(Dataset):
         cleaned = pd.read_csv(self.anno_path, header=None, delimiter=' ')
         self.dataset_samples = list(cleaned.values[:, 0])
         self.label_array = list(cleaned.values[:, 1])
+        self.valid_indices = list(range(len(self.dataset_samples.copy())))
+        self.valid_indices_backup = list(range(len(self.dataset_samples.copy())))
 
         if (mode == 'train'):
             pass
@@ -80,6 +82,8 @@ class SSVideoClsDataset(Dataset):
         if self.mode == 'train':
             args = self.args 
             scale_t = 1
+            # remove the correct samples
+            index = self.valid_indices[index]
 
             sample = self.dataset_samples[index]
             buffer = self.loadvideo_decord(sample, sample_rate_scale=scale_t) # T H W C
@@ -263,11 +267,16 @@ class SSVideoClsDataset(Dataset):
         return buffer
 
     def __len__(self):
-        if self.mode != 'test':
-            return len(self.dataset_samples)
-        else:
+        if self.mode == 'test':
             return len(self.test_dataset)
-
+        elif self.mode == 'train':
+            return len(self.valid_indices)
+        else:
+            return len(self.dataset_samples)
+    
+    def remove_sample(self, idx):
+        if idx in self.valid_indices:
+            self.valid_indices.remove(idx)
 
 def spatial_sampling(
     frames,

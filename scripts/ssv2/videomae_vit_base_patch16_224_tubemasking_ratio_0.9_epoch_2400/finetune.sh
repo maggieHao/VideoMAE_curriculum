@@ -1,7 +1,7 @@
 # Set the path to save checkpoints
 OUTPUT_DIR='YOUR_PATH/ssv2_videomae_pretrain_base_patch16_224_frame_16x2_tube_mask_ratio_0.9_e2400/eval_lr_5e-4_repeated_aug_epoch_30'
 # path to SSV2 annotation file (train.csv/val.csv/test.csv)
-DATA_PATH='YOUR_PATH/list_ssv2'
+DATA_PATH='/home/maggie/VideoMAE_curriculum/labels/ssv2'
 # path to pretrain model
 MODEL_PATH='YOUR_PATH/ssv2_videomae_pretrain_base_patch16_224_frame_16x2_tube_mask_ratio_0.9_e2400/checkpoint-2399.pth'
 

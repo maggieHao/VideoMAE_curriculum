@@ -46,8 +46,8 @@ def sample_by_group(input_file, output_file, sample_ratio=0.2):
 
 if __name__ == "__main__":
     # 使用示例
-    input_file = "/home/maggie/kinetics-dataset/k400/test.csv"
-    output_file = "/home/maggie/VideoMAE_curriculum/labels/k400/test.csv"
+    input_file = "/home/maggie/Documents/test.csv"
+    output_file = "/home/maggie/VideoMAE_curriculum/labels/ssv2/test.csv"
     
     # 执行采样
     sample_by_group(input_file, output_file)
