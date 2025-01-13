@@ -45,6 +45,7 @@ def train_one_epoch(index_remove, model: torch.nn.Module, criterion: torch.nn.Mo
     header = 'Epoch: [{}]'.format(epoch)
     print_freq = 10
     count = 0
+    index_total = index_remove.clone()
 
     if loss_scaler is None:
         model.zero_grad()
@@ -92,9 +93,11 @@ def train_one_epoch(index_remove, model: torch.nn.Module, criterion: torch.nn.Mo
             target_index = targets[i].argmax().item()
             # print(f'pred_index as {pred_index}.')
             # print(f'target_index as {target_index}.')
+            sample_idx = index[i]
             if pred_index == target_index:
-                sample_idx = index[i]
                 index_remove[sample_idx] = 1
+            # all index used for this epoch
+            index_total[sample_idx] = 1
 
         if not math.isfinite(loss_value):
             print("Loss is {}, stopping training".format(loss_value))
@@ -166,7 +169,7 @@ def train_one_epoch(index_remove, model: torch.nn.Module, criterion: torch.nn.Mo
     # gather the stats from all processes
     metric_logger.synchronize_between_processes()
     print("Averaged stats:", metric_logger)
-    return {k: meter.global_avg for k, meter in metric_logger.meters.items()}, index_remove
+    return {k: meter.global_avg for k, meter in metric_logger.meters.items()}, index_remove, index_total
 
 def train_one_epoch_old(model: torch.nn.Module, criterion: torch.nn.Module,
                     data_loader: Iterable, optimizer: torch.optim.Optimizer,

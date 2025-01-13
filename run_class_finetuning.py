@@ -503,7 +503,7 @@ def main(args, ds_init):
         if log_writer is not None:
             log_writer.set_step(epoch * num_training_steps_per_epoch * args.update_freq)
 
-        train_stats, index_remove = train_one_epoch(
+        train_stats, index_remove, index_total = train_one_epoch(
             index_remove_original,
             model, criterion, data_loader_train, optimizer,
             device, epoch, loss_scaler, args.clip_grad, model_ema, mixup_fn,
@@ -516,6 +516,15 @@ def main(args, ds_init):
         print(f"Number of samples to remove: {torch.sum(index_remove == 1)}")
         indices_to_remove = (index_remove == 1).nonzero().squeeze()
         print(f"Indices to remove: {indices_to_remove}")
+
+        # random select the same number of samples to remove
+        n = torch.sum(index_remove == 1)
+        ones_positions = torch.where(index_total == 1)[0]
+        indices_to_remove = ones_positions[torch.randperm(len(ones_positions))[:n]]
+
+        # remove 50% of the indices
+        # mask = torch.rand(indices_to_remove.shape) > 0.5  # 创建随机布尔掩码
+        # indices_to_remove = indices_to_remove[mask]
 
         for i in indices_to_remove:
             dataset_train.remove_sample(int(i))
