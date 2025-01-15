@@ -1,0 +1,1710 @@
+/home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torch/distributed/launch.py:178: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use_env is set by default in torchrun.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+/home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torchvision/io/image.py:11: UserWarning: Failed to load image Python extension: /home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torchvision/image.so: undefined symbol: _ZN5torch3jit17parseSchemaOrNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+  warn(f"Failed to load image Python extension: {e}")
+/home/maggie/VideoMAE_curriculum/modeling_finetune.py:289: UserWarning: Overwriting vit_small_patch16_224 in registry with modeling_finetune.vit_small_patch16_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_small_patch16_224(pretrained=False, **kwargs):
+/home/maggie/VideoMAE_curriculum/modeling_finetune.py:300: UserWarning: Overwriting vit_base_patch16_224 in registry with modeling_finetune.vit_base_patch16_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_224(pretrained=False, **kwargs):
+/home/maggie/VideoMAE_curriculum/modeling_finetune.py:311: UserWarning: Overwriting vit_base_patch16_384 in registry with modeling_finetune.vit_base_patch16_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_384(pretrained=False, **kwargs):
+/home/maggie/VideoMAE_curriculum/modeling_finetune.py:320: UserWarning: Overwriting vit_large_patch16_224 in registry with modeling_finetune.vit_large_patch16_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch16_224(pretrained=False, **kwargs):
+/home/maggie/VideoMAE_curriculum/modeling_finetune.py:329: UserWarning: Overwriting vit_large_patch16_384 in registry with modeling_finetune.vit_large_patch16_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch16_384(pretrained=False, **kwargs):
+[2025-01-15 13:18:47,455] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+| distributed init (rank 0): env://, gpu 0
+Namespace(batch_size=12, epochs=40, update_freq=1, save_ckpt_freq=10, model='vit_small_patch16_224', tubelet_size=2, input_size=224, fc_drop_rate=0.0, drop=0.0, attn_drop_rate=0.0, drop_path=0.1, disable_eval_during_finetuning=False, model_ema=False, model_ema_decay=0.9999, model_ema_force_cpu=False, opt='adamw', opt_eps=1e-08, opt_betas=[0.9, 0.999], clip_grad=None, momentum=0.9, weight_decay=0.05, weight_decay_end=None, lr=0.001, layer_decay=0.7, warmup_lr=1e-06, min_lr=1e-06, warmup_epochs=5, warmup_steps=-1, color_jitter=0.4, num_sample=2, aa='rand-m7-n4-mstd0.5-inc1', smoothing=0.1, train_interpolation='bicubic', crop_pct=None, short_side_size=224, test_num_segment=2, test_num_crop=3, reprob=0.25, remode='pixel', recount=1, resplit=False, mixup=0.8, cutmix=1.0, cutmix_minmax=None, mixup_prob=1.0, mixup_switch_prob=0.5, mixup_mode='batch', finetune='/home/maggie/VideoMAE_checkpoints/pretrain_checkpoint/pretrain_checkpoint_small_ssv2.pth', model_key='model|module', model_prefix='', init_scale=0.001, use_checkpoint=False, use_mean_pooling=True, data_path='/home/maggie/VideoMAE_curriculum/labels/ssv2', eval_data_path=None, nb_classes=174, imagenet_default_mean_and_std=True, num_segments=1, num_frames=16, sampling_rate=4, data_set='SSV2', output_dir='/home/maggie/VideoMAE_checkpoints_curriculum/ssv2_small_20data_mask_curriculum_threshold_0/', log_dir='/home/maggie/VideoMAE_checkpoints_curriculum/ssv2_small_20data_mask_curriculum_threshold_0/', device='cuda', seed=0, resume='', auto_resume=True, save_ckpt=True, start_epoch=0, eval=False, dist_eval=True, num_workers=10, pin_mem=True, world_size=1, local_rank=0, dist_on_itp=False, dist_url='env://', enable_deepspeed=True, deepspeed=False, deepspeed_config='/home/maggie/VideoMAE_checkpoints_curriculum/ssv2_small_20data_mask_curriculum_threshold_0/deepspeed_config.json', deepscale=False, deepscale_config=None, rank=0, gpu=0, distributed=True, dist_backend='nccl')
+Number of the class = 174
+Number of the class = 174
+Number of the class = 174
+Sampler_train = <torch.utils.data.distributed.DistributedSampler object at 0x7f6e2b1741c0>
+Mixup is activated!
+Patch size = (16, 16)
+Load ckpt from /home/maggie/VideoMAE_checkpoints/pretrain_checkpoint/pretrain_checkpoint_small_ssv2.pth
+Load state_dict by model_key = model
+Weights of VisionTransformer not initialized from pretrained model: ['fc_norm.weight', 'fc_norm.bias', 'head.weight', 'head.bias']
+Weights from pretrained model not used in VisionTransformer: ['mask_token', 'decoder.blocks.0.norm1.weight', 'decoder.blocks.0.norm1.bias', 'decoder.blocks.0.attn.q_bias', 'decoder.blocks.0.attn.v_bias', 'decoder.blocks.0.attn.qkv.weight', 'decoder.blocks.0.attn.proj.weight', 'decoder.blocks.0.attn.proj.bias', 'decoder.blocks.0.norm2.weight', 'decoder.blocks.0.norm2.bias', 'decoder.blocks.0.mlp.fc1.weight', 'decoder.blocks.0.mlp.fc1.bias', 'decoder.blocks.0.mlp.fc2.weight', 'decoder.blocks.0.mlp.fc2.bias', 'decoder.blocks.1.norm1.weight', 'decoder.blocks.1.norm1.bias', 'decoder.blocks.1.attn.q_bias', 'decoder.blocks.1.attn.v_bias', 'decoder.blocks.1.attn.qkv.weight', 'decoder.blocks.1.attn.proj.weight', 'decoder.blocks.1.attn.proj.bias', 'decoder.blocks.1.norm2.weight', 'decoder.blocks.1.norm2.bias', 'decoder.blocks.1.mlp.fc1.weight', 'decoder.blocks.1.mlp.fc1.bias', 'decoder.blocks.1.mlp.fc2.weight', 'decoder.blocks.1.mlp.fc2.bias', 'decoder.blocks.2.norm1.weight', 'decoder.blocks.2.norm1.bias', 'decoder.blocks.2.attn.q_bias', 'decoder.blocks.2.attn.v_bias', 'decoder.blocks.2.attn.qkv.weight', 'decoder.blocks.2.attn.proj.weight', 'decoder.blocks.2.attn.proj.bias', 'decoder.blocks.2.norm2.weight', 'decoder.blocks.2.norm2.bias', 'decoder.blocks.2.mlp.fc1.weight', 'decoder.blocks.2.mlp.fc1.bias', 'decoder.blocks.2.mlp.fc2.weight', 'decoder.blocks.2.mlp.fc2.bias', 'decoder.blocks.3.norm1.weight', 'decoder.blocks.3.norm1.bias', 'decoder.blocks.3.attn.q_bias', 'decoder.blocks.3.attn.v_bias', 'decoder.blocks.3.attn.qkv.weight', 'decoder.blocks.3.attn.proj.weight', 'decoder.blocks.3.attn.proj.bias', 'decoder.blocks.3.norm2.weight', 'decoder.blocks.3.norm2.bias', 'decoder.blocks.3.mlp.fc1.weight', 'decoder.blocks.3.mlp.fc1.bias', 'decoder.blocks.3.mlp.fc2.weight', 'decoder.blocks.3.mlp.fc2.bias', 'decoder.norm.weight', 'decoder.norm.bias', 'decoder.head.weight', 'decoder.head.bias', 'encoder_to_decoder.weight', 'norm.weight', 'norm.bias']
+Model = VisionTransformer(
+  (patch_embed): PatchEmbed(
+    (proj): Conv3d(3, 384, kernel_size=(2, 16, 16), stride=(2, 16, 16))
+  )
+  (pos_drop): Dropout(p=0.0, inplace=False)
+  (blocks): ModuleList(
+    (0): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): Identity()
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (1): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.00909090880304575)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (2): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.0181818176060915)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (3): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.027272727340459824)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (4): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.036363635212183)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (5): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.045454543083906174)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (6): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.054545458406209946)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (7): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.06363636255264282)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (8): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.0727272778749466)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (9): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.08181818574666977)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (10): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.09090909361839294)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (11): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.10000000149011612)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+  )
+  (norm): Identity()
+  (fc_norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+  (fc_dropout): Identity()
+  (head): Linear(in_features=384, out_features=174, bias=True)
+)
+number of params: 21946926
+LR = 0.00004688
+Batch size = 12
+Update frequent = 1
+Number of training examples = 33709
+Number of training training per epoch = 2809
+Assigned values = [0.009688901040699992, 0.01384128720099999, 0.019773267429999988, 0.028247524899999984, 0.04035360699999998, 0.05764800999999997, 0.08235429999999996, 0.11764899999999996, 0.16806999999999994, 0.24009999999999995, 0.3429999999999999, 0.48999999999999994, 0.7, 1.0]
+Skip weight decay list:  {'cls_token', 'pos_embed'}
+Param groups = {
+  "layer_0_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "patch_embed.proj.weight"
+    ],
+    "lr_scale": 0.009688901040699992
+  },
+  "layer_0_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "patch_embed.proj.bias"
+    ],
+    "lr_scale": 0.009688901040699992
+  },
+  "layer_1_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.0.norm1.weight",
+      "blocks.0.norm1.bias",
+      "blocks.0.attn.q_bias",
+      "blocks.0.attn.v_bias",
+      "blocks.0.attn.proj.bias",
+      "blocks.0.norm2.weight",
+      "blocks.0.norm2.bias",
+      "blocks.0.mlp.fc1.bias",
+      "blocks.0.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.01384128720099999
+  },
+  "layer_1_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.0.attn.qkv.weight",
+      "blocks.0.attn.proj.weight",
+      "blocks.0.mlp.fc1.weight",
+      "blocks.0.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.01384128720099999
+  },
+  "layer_2_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.1.norm1.weight",
+      "blocks.1.norm1.bias",
+      "blocks.1.attn.q_bias",
+      "blocks.1.attn.v_bias",
+      "blocks.1.attn.proj.bias",
+      "blocks.1.norm2.weight",
+      "blocks.1.norm2.bias",
+      "blocks.1.mlp.fc1.bias",
+      "blocks.1.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.019773267429999988
+  },
+  "layer_2_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.1.attn.qkv.weight",
+      "blocks.1.attn.proj.weight",
+      "blocks.1.mlp.fc1.weight",
+      "blocks.1.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.019773267429999988
+  },
+  "layer_3_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.2.norm1.weight",
+      "blocks.2.norm1.bias",
+      "blocks.2.attn.q_bias",
+      "blocks.2.attn.v_bias",
+      "blocks.2.attn.proj.bias",
+      "blocks.2.norm2.weight",
+      "blocks.2.norm2.bias",
+      "blocks.2.mlp.fc1.bias",
+      "blocks.2.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.028247524899999984
+  },
+  "layer_3_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.2.attn.qkv.weight",
+      "blocks.2.attn.proj.weight",
+      "blocks.2.mlp.fc1.weight",
+      "blocks.2.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.028247524899999984
+  },
+  "layer_4_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.3.norm1.weight",
+      "blocks.3.norm1.bias",
+      "blocks.3.attn.q_bias",
+      "blocks.3.attn.v_bias",
+      "blocks.3.attn.proj.bias",
+      "blocks.3.norm2.weight",
+      "blocks.3.norm2.bias",
+      "blocks.3.mlp.fc1.bias",
+      "blocks.3.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.04035360699999998
+  },
+  "layer_4_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.3.attn.qkv.weight",
+      "blocks.3.attn.proj.weight",
+      "blocks.3.mlp.fc1.weight",
+      "blocks.3.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.04035360699999998
+  },
+  "layer_5_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.4.norm1.weight",
+      "blocks.4.norm1.bias",
+      "blocks.4.attn.q_bias",
+      "blocks.4.attn.v_bias",
+      "blocks.4.attn.proj.bias",
+      "blocks.4.norm2.weight",
+      "blocks.4.norm2.bias",
+      "blocks.4.mlp.fc1.bias",
+      "blocks.4.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.05764800999999997
+  },
+  "layer_5_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.4.attn.qkv.weight",
+      "blocks.4.attn.proj.weight",
+      "blocks.4.mlp.fc1.weight",
+      "blocks.4.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.05764800999999997
+  },
+  "layer_6_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.5.norm1.weight",
+      "blocks.5.norm1.bias",
+      "blocks.5.attn.q_bias",
+      "blocks.5.attn.v_bias",
+      "blocks.5.attn.proj.bias",
+      "blocks.5.norm2.weight",
+      "blocks.5.norm2.bias",
+      "blocks.5.mlp.fc1.bias",
+      "blocks.5.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.08235429999999996
+  },
+  "layer_6_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.5.attn.qkv.weight",
+      "blocks.5.attn.proj.weight",
+      "blocks.5.mlp.fc1.weight",
+      "blocks.5.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.08235429999999996
+  },
+  "layer_7_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.6.norm1.weight",
+      "blocks.6.norm1.bias",
+      "blocks.6.attn.q_bias",
+      "blocks.6.attn.v_bias",
+      "blocks.6.attn.proj.bias",
+      "blocks.6.norm2.weight",
+      "blocks.6.norm2.bias",
+      "blocks.6.mlp.fc1.bias",
+      "blocks.6.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.11764899999999996
+  },
+  "layer_7_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.6.attn.qkv.weight",
+      "blocks.6.attn.proj.weight",
+      "blocks.6.mlp.fc1.weight",
+      "blocks.6.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.11764899999999996
+  },
+  "layer_8_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.7.norm1.weight",
+      "blocks.7.norm1.bias",
+      "blocks.7.attn.q_bias",
+      "blocks.7.attn.v_bias",
+      "blocks.7.attn.proj.bias",
+      "blocks.7.norm2.weight",
+      "blocks.7.norm2.bias",
+      "blocks.7.mlp.fc1.bias",
+      "blocks.7.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.16806999999999994
+  },
+  "layer_8_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.7.attn.qkv.weight",
+      "blocks.7.attn.proj.weight",
+      "blocks.7.mlp.fc1.weight",
+      "blocks.7.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.16806999999999994
+  },
+  "layer_9_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.8.norm1.weight",
+      "blocks.8.norm1.bias",
+      "blocks.8.attn.q_bias",
+      "blocks.8.attn.v_bias",
+      "blocks.8.attn.proj.bias",
+      "blocks.8.norm2.weight",
+      "blocks.8.norm2.bias",
+      "blocks.8.mlp.fc1.bias",
+      "blocks.8.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.24009999999999995
+  },
+  "layer_9_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.8.attn.qkv.weight",
+      "blocks.8.attn.proj.weight",
+      "blocks.8.mlp.fc1.weight",
+      "blocks.8.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.24009999999999995
+  },
+  "layer_10_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.9.norm1.weight",
+      "blocks.9.norm1.bias",
+      "blocks.9.attn.q_bias",
+      "blocks.9.attn.v_bias",
+      "blocks.9.attn.proj.bias",
+      "blocks.9.norm2.weight",
+      "blocks.9.norm2.bias",
+      "blocks.9.mlp.fc1.bias",
+      "blocks.9.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.3429999999999999
+  },
+  "layer_10_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.9.attn.qkv.weight",
+      "blocks.9.attn.proj.weight",
+      "blocks.9.mlp.fc1.weight",
+      "blocks.9.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.3429999999999999
+  },
+  "layer_11_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.10.norm1.weight",
+      "blocks.10.norm1.bias",
+      "blocks.10.attn.q_bias",
+      "blocks.10.attn.v_bias",
+      "blocks.10.attn.proj.bias",
+      "blocks.10.norm2.weight",
+      "blocks.10.norm2.bias",
+      "blocks.10.mlp.fc1.bias",
+      "blocks.10.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.48999999999999994
+  },
+  "layer_11_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.10.attn.qkv.weight",
+      "blocks.10.attn.proj.weight",
+      "blocks.10.mlp.fc1.weight",
+      "blocks.10.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.48999999999999994
+  },
+  "layer_12_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.11.norm1.weight",
+      "blocks.11.norm1.bias",
+      "blocks.11.attn.q_bias",
+      "blocks.11.attn.v_bias",
+      "blocks.11.attn.proj.bias",
+      "blocks.11.norm2.weight",
+      "blocks.11.norm2.bias",
+      "blocks.11.mlp.fc1.bias",
+      "blocks.11.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.7
+  },
+  "layer_12_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.11.attn.qkv.weight",
+      "blocks.11.attn.proj.weight",
+      "blocks.11.mlp.fc1.weight",
+      "blocks.11.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.7
+  },
+  "layer_13_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "fc_norm.weight",
+      "fc_norm.bias",
+      "head.bias"
+    ],
+    "lr_scale": 1.0
+  },
+  "layer_13_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "head.weight"
+    ],
+    "lr_scale": 1.0
+  }
+}
+[2025-01-15 13:18:50,029] [INFO] [logging.py:96:log_dist] [Rank -1] DeepSpeed info: version=0.13.1, git-hash=unknown, git-branch=unknown
+[2025-01-15 13:18:50,029] [INFO] [comm.py:637:init_distributed] cdb=None
+[2025-01-15 13:18:50,050] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+Using /home/maggie/.cache/torch_extensions/py310_cu116 as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home/maggie/.cache/torch_extensions/py310_cu116/fused_adam/build.ninja...
+Building extension module fused_adam...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module fused_adam...
+Time to load fused_adam op: 0.03831958770751953 seconds
+[2025-01-15 13:18:50,241] [INFO] [logging.py:96:log_dist] [Rank 0] Using DeepSpeed Optimizer param name adam as basic optimizer
+[2025-01-15 13:18:50,241] [INFO] [logging.py:96:log_dist] [Rank 0] Removing param_group that has no 'params' in the basic Optimizer
+[2025-01-15 13:18:50,243] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Basic Optimizer = FusedAdam
+[2025-01-15 13:18:50,243] [INFO] [logging.py:96:log_dist] [Rank 0] Creating fp16 optimizer with dynamic loss scale
+[2025-01-15 13:18:50,249] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Final Optimizer = adam
+[2025-01-15 13:18:50,249] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed using client LR scheduler
+[2025-01-15 13:18:50,249] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed LR Scheduler = None
+[2025-01-15 13:18:50,249] [INFO] [logging.py:96:log_dist] [Rank 0] step=0, skipped=0, lr=[0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001], mom=[[0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999]]
+[2025-01-15 13:18:50,250] [INFO] [config.py:984:print] DeepSpeedEngine configuration:
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   activation_checkpointing_config  {
+    "partition_activations": false, 
+    "contiguous_memory_optimization": false, 
+    "cpu_checkpointing": false, 
+    "number_checkpoints": null, 
+    "synchronize_checkpoint_boundary": false, 
+    "profile": false
+}
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'thread_count': 1, 'single_submit': False, 'overlap_events': True}
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   amp_enabled .................. False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   amp_params ................... False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   autotuning_config ............ {
+    "enabled": false, 
+    "start_step": null, 
+    "end_step": null, 
+    "metric_path": null, 
+    "arg_mappings": null, 
+    "metric": "throughput", 
+    "model_info": null, 
+    "results_dir": "autotuning_results", 
+    "exps_dir": "autotuning_exps", 
+    "overwrite": true, 
+    "fast": true, 
+    "start_profile_step": 3, 
+    "end_profile_step": 5, 
+    "tuner_type": "gridsearch", 
+    "tuner_early_stopping": 5, 
+    "tuner_num_trials": 50, 
+    "model_info_path": null, 
+    "mp_size": 1, 
+    "max_train_batch_size": null, 
+    "min_train_batch_size": 1, 
+    "max_train_micro_batch_size_per_gpu": 1.024000e+03, 
+    "min_train_micro_batch_size_per_gpu": 1, 
+    "num_tuning_micro_batch_sizes": 3
+}
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   bfloat16_enabled ............. False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   checkpoint_parallel_write_pipeline  False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   checkpoint_tag_validation_enabled  True
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   checkpoint_tag_validation_fail  False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x7f6e2a802e90>
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   communication_data_type ...... None
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   curriculum_enabled_legacy .... False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   curriculum_params_legacy ..... False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'curriculum_learning': {'enabled': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   data_efficiency_enabled ...... False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   dataloader_drop_last ......... False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   disable_allgather ............ False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   dump_state ................... False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   dynamic_loss_scale_args ...... {'init_scale': 128, 'scale_window': 128, 'delayed_shift': 2, 'consecutive_hysteresis': False, 'min_scale': 1}
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   eigenvalue_enabled ........... False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   eigenvalue_gas_boundary_resolution  1
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   eigenvalue_layer_num ......... 0
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   eigenvalue_max_iter .......... 100
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   eigenvalue_stability ......... 1e-06
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   eigenvalue_tol ............... 0.01
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   eigenvalue_verbose ........... False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   elasticity_enabled ........... False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   flops_profiler_config ........ {
+    "enabled": false, 
+    "recompute_fwd_factor": 0.0, 
+    "profile_step": 1, 
+    "module_depth": -1, 
+    "top_modules": 1, 
+    "detailed": true, 
+    "output_file": null
+}
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   fp16_auto_cast ............... False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   fp16_enabled ................. True
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   fp16_master_weights_and_gradients  False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   global_rank .................. 0
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   grad_accum_dtype ............. None
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   gradient_accumulation_steps .. 1
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   gradient_clipping ............ 0.0
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   gradient_predivide_factor .... 1.0
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   graph_harvesting ............. False
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+[2025-01-15 13:18:50,250] [INFO] [config.py:988:print]   initial_dynamic_scale ........ 128
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   load_universal_checkpoint .... False
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   loss_scale ................... 0
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   memory_breakdown ............. False
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   mics_hierarchial_params_gather  False
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   mics_shard_size .............. -1
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') enabled=False
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   nebula_config ................ {
+    "enabled": false, 
+    "persistent_storage_path": null, 
+    "persistent_time_interval": 100, 
+    "num_of_version_in_retention": 2, 
+    "enable_nebula_load": true, 
+    "load_path": null
+}
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   optimizer_legacy_fusion ...... False
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   optimizer_name ............... adam
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   optimizer_params ............. {'lr': 0.001, 'weight_decay': 0.05, 'bias_correction': True, 'betas': [0.9, 0.999], 'eps': 1e-08}
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0, 'pipe_partitioned': True, 'grad_partitioned': True}
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   pld_enabled .................. False
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   pld_params ................... False
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   prescale_gradients ........... False
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   scheduler_name ............... None
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   scheduler_params ............. None
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   seq_parallel_communication_data_type  torch.float32
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   sparse_attention ............. None
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   sparse_gradients_enabled ..... False
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   steps_per_print .............. 1000
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   train_batch_size ............. 12
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   train_micro_batch_size_per_gpu  12
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   use_data_before_expert_parallel_  False
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   use_node_local_storage ....... False
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   wall_clock_breakdown ......... False
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   weight_quantization_config ... None
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   world_size ................... 1
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   zero_allow_untested_optimizer  False
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   zero_config .................. stage=0 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500,000,000 use_multi_rank_bucket_allreduce=True allgather_partitions=True allgather_bucket_size=500,000,000 overlap_comm=False load_from_fp32_weights=True elastic_checkpoint=False offload_param=None offload_optimizer=None sub_group_size=1,000,000,000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=50,000,000 param_persistence_threshold=100,000 model_persistence_threshold=sys.maxsize max_live_parameters=1,000,000,000 max_reuse_distance=1,000,000,000 gather_16bit_weights_on_model_save=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_nontrainable_weights=False zero_quantized_gradients=False mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True pipeline_loading_checkpoint=False override_module_apply=True
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   zero_enabled ................. False
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   zero_force_ds_cpu_optimizer .. True
+[2025-01-15 13:18:50,251] [INFO] [config.py:988:print]   zero_optimization_stage ...... 0
+[2025-01-15 13:18:50,251] [INFO] [config.py:974:print_user_config]   json = {
+    "train_batch_size": 12, 
+    "train_micro_batch_size_per_gpu": 12, 
+    "steps_per_print": 1000, 
+    "optimizer": {
+        "type": "Adam", 
+        "adam_w_mode": true, 
+        "params": {
+            "lr": 0.001, 
+            "weight_decay": 0.05, 
+            "bias_correction": true, 
+            "betas": [0.9, 0.999], 
+            "eps": 1e-08
+        }
+    }, 
+    "fp16": {
+        "enabled": true, 
+        "loss_scale": 0, 
+        "initial_scale_power": 7, 
+        "loss_scale_window": 128
+    }
+}
+model.gradient_accumulation_steps() = 1
+Use step level LR scheduler!
+Set warmup steps = 14045
+Set warmup steps = 0
+Max WD = 0.0500000, Min WD = 0.0500000
+criterion = SoftTargetCrossEntropy()
+Start training for 40 epochs
+train curriculum learning mask.
+Epoch: [0]  [   0/2809]  eta: 5:50:04  lr: 0.000000  min_lr: 0.000000  loss: 5.1602 (5.1602)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 7.4777  data: 3.9791  max mem: 15572
+Epoch: [0]  [  10/2809]  eta: 0:47:17  lr: 0.000000  min_lr: 0.000000  loss: 5.1602 (5.1601)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 1.0138  data: 0.3619  max mem: 15572
+Epoch: [0]  [  20/2809]  eta: 0:32:46  lr: 0.000000  min_lr: 0.000000  loss: 5.1602 (5.1601)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3664  data: 0.0002  max mem: 15572
+Epoch: [0]  [  30/2809]  eta: 0:27:34  lr: 0.000000  min_lr: 0.000000  loss: 5.1602 (5.1601)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3653  data: 0.0002  max mem: 15572
+Epoch: [0]  [  40/2809]  eta: 0:24:57  lr: 0.000000  min_lr: 0.000000  loss: 5.1601 (5.1601)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3686  data: 0.0002  max mem: 15572
+Epoch: [0]  [  50/2809]  eta: 0:23:21  lr: 0.000000  min_lr: 0.000000  loss: 5.1601 (5.1601)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3726  data: 0.0003  max mem: 15572
+Epoch: [0]  [  60/2809]  eta: 0:22:14  lr: 0.000000  min_lr: 0.000000  loss: 5.1600 (5.1601)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3713  data: 0.0002  max mem: 15572
+Epoch: [0]  [  70/2809]  eta: 0:21:23  lr: 0.000000  min_lr: 0.000000  loss: 5.1599 (5.1600)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3675  data: 0.0002  max mem: 15572
+Epoch: [0]  [  80/2809]  eta: 0:20:44  lr: 0.000000  min_lr: 0.000000  loss: 5.1598 (5.1600)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3666  data: 0.0002  max mem: 15572
+Epoch: [0]  [  90/2809]  eta: 0:20:14  lr: 0.000000  min_lr: 0.000000  loss: 5.1597 (5.1600)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3685  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 100/2809]  eta: 0:19:48  lr: 0.000000  min_lr: 0.000000  loss: 5.1594 (5.1599)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3690  data: 0.0002  max mem: 15572
+WARNING:torch.distributed.elastic.agent.server.api:Received 1 death signal, shutting down workers
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 2844889 closing signal SIGHUP
+Traceback (most recent call last):
+  File "/home/maggie/miniconda3/envs/timesformer/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/maggie/miniconda3/envs/timesformer/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torch/distributed/launch.py", line 193, in <module>
+    main()
+  File "/home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torch/distributed/launch.py", line 189, in main
+    launch(args)
+  File "/home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torch/distributed/launch.py", line 174, in launch
+    run(args)
+  File "/home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torch/distributed/run.py", line 752, in run
+    elastic_launch(
+  File "/home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 131, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 236, in launch_agent
+    result = agent.run()
+  File "/home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 125, in wrapper
+    result = f(*args, **kwargs)
+  File "/home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 709, in run
+    result = self._invoke_run(role)
+  File "/home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 850, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 60, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 2844886 got signal: 1
+/home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torch/distributed/launch.py:178: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use_env is set by default in torchrun.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+/home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torchvision/io/image.py:11: UserWarning: Failed to load image Python extension: /home/maggie/miniconda3/envs/timesformer/lib/python3.10/site-packages/torchvision/image.so: undefined symbol: _ZN5torch3jit17parseSchemaOrNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+  warn(f"Failed to load image Python extension: {e}")
+/home/maggie/VideoMAE_curriculum/modeling_finetune.py:289: UserWarning: Overwriting vit_small_patch16_224 in registry with modeling_finetune.vit_small_patch16_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_small_patch16_224(pretrained=False, **kwargs):
+/home/maggie/VideoMAE_curriculum/modeling_finetune.py:300: UserWarning: Overwriting vit_base_patch16_224 in registry with modeling_finetune.vit_base_patch16_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_224(pretrained=False, **kwargs):
+/home/maggie/VideoMAE_curriculum/modeling_finetune.py:311: UserWarning: Overwriting vit_base_patch16_384 in registry with modeling_finetune.vit_base_patch16_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_384(pretrained=False, **kwargs):
+/home/maggie/VideoMAE_curriculum/modeling_finetune.py:320: UserWarning: Overwriting vit_large_patch16_224 in registry with modeling_finetune.vit_large_patch16_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch16_224(pretrained=False, **kwargs):
+/home/maggie/VideoMAE_curriculum/modeling_finetune.py:329: UserWarning: Overwriting vit_large_patch16_384 in registry with modeling_finetune.vit_large_patch16_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch16_384(pretrained=False, **kwargs):
+[2025-01-15 13:19:39,440] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+| distributed init (rank 0): env://, gpu 0
+Namespace(batch_size=12, epochs=40, update_freq=1, save_ckpt_freq=10, model='vit_small_patch16_224', tubelet_size=2, input_size=224, fc_drop_rate=0.0, drop=0.0, attn_drop_rate=0.0, drop_path=0.1, disable_eval_during_finetuning=False, model_ema=False, model_ema_decay=0.9999, model_ema_force_cpu=False, opt='adamw', opt_eps=1e-08, opt_betas=[0.9, 0.999], clip_grad=None, momentum=0.9, weight_decay=0.05, weight_decay_end=None, lr=0.001, layer_decay=0.7, warmup_lr=1e-06, min_lr=1e-06, warmup_epochs=5, warmup_steps=-1, color_jitter=0.4, num_sample=2, aa='rand-m7-n4-mstd0.5-inc1', smoothing=0.1, train_interpolation='bicubic', crop_pct=None, short_side_size=224, test_num_segment=2, test_num_crop=3, reprob=0.25, remode='pixel', recount=1, resplit=False, mixup=0.8, cutmix=1.0, cutmix_minmax=None, mixup_prob=1.0, mixup_switch_prob=0.5, mixup_mode='batch', finetune='/home/maggie/VideoMAE_checkpoints/pretrain_checkpoint/pretrain_checkpoint_small_ssv2.pth', model_key='model|module', model_prefix='', init_scale=0.001, use_checkpoint=False, use_mean_pooling=True, data_path='/home/maggie/VideoMAE_curriculum/labels/ssv2', eval_data_path=None, nb_classes=174, imagenet_default_mean_and_std=True, num_segments=1, num_frames=16, sampling_rate=4, data_set='SSV2', output_dir='/home/maggie/VideoMAE_checkpoints_curriculum/ssv2_small_20data_mask_curriculum_threshold_0/', log_dir='/home/maggie/VideoMAE_checkpoints_curriculum/ssv2_small_20data_mask_curriculum_threshold_0/', device='cuda', seed=0, resume='', auto_resume=True, save_ckpt=True, start_epoch=0, eval=False, dist_eval=True, num_workers=10, pin_mem=True, world_size=1, local_rank=0, dist_on_itp=False, dist_url='env://', enable_deepspeed=True, deepspeed=False, deepspeed_config='/home/maggie/VideoMAE_checkpoints_curriculum/ssv2_small_20data_mask_curriculum_threshold_0/deepspeed_config.json', deepscale=False, deepscale_config=None, rank=0, gpu=0, distributed=True, dist_backend='nccl')
+Number of the class = 174
+Number of the class = 174
+Number of the class = 174
+Sampler_train = <torch.utils.data.distributed.DistributedSampler object at 0x7f4a84a341c0>
+Mixup is activated!
+Patch size = (16, 16)
+Load ckpt from /home/maggie/VideoMAE_checkpoints/pretrain_checkpoint/pretrain_checkpoint_small_ssv2.pth
+Load state_dict by model_key = model
+Weights of VisionTransformer not initialized from pretrained model: ['fc_norm.weight', 'fc_norm.bias', 'head.weight', 'head.bias']
+Weights from pretrained model not used in VisionTransformer: ['mask_token', 'decoder.blocks.0.norm1.weight', 'decoder.blocks.0.norm1.bias', 'decoder.blocks.0.attn.q_bias', 'decoder.blocks.0.attn.v_bias', 'decoder.blocks.0.attn.qkv.weight', 'decoder.blocks.0.attn.proj.weight', 'decoder.blocks.0.attn.proj.bias', 'decoder.blocks.0.norm2.weight', 'decoder.blocks.0.norm2.bias', 'decoder.blocks.0.mlp.fc1.weight', 'decoder.blocks.0.mlp.fc1.bias', 'decoder.blocks.0.mlp.fc2.weight', 'decoder.blocks.0.mlp.fc2.bias', 'decoder.blocks.1.norm1.weight', 'decoder.blocks.1.norm1.bias', 'decoder.blocks.1.attn.q_bias', 'decoder.blocks.1.attn.v_bias', 'decoder.blocks.1.attn.qkv.weight', 'decoder.blocks.1.attn.proj.weight', 'decoder.blocks.1.attn.proj.bias', 'decoder.blocks.1.norm2.weight', 'decoder.blocks.1.norm2.bias', 'decoder.blocks.1.mlp.fc1.weight', 'decoder.blocks.1.mlp.fc1.bias', 'decoder.blocks.1.mlp.fc2.weight', 'decoder.blocks.1.mlp.fc2.bias', 'decoder.blocks.2.norm1.weight', 'decoder.blocks.2.norm1.bias', 'decoder.blocks.2.attn.q_bias', 'decoder.blocks.2.attn.v_bias', 'decoder.blocks.2.attn.qkv.weight', 'decoder.blocks.2.attn.proj.weight', 'decoder.blocks.2.attn.proj.bias', 'decoder.blocks.2.norm2.weight', 'decoder.blocks.2.norm2.bias', 'decoder.blocks.2.mlp.fc1.weight', 'decoder.blocks.2.mlp.fc1.bias', 'decoder.blocks.2.mlp.fc2.weight', 'decoder.blocks.2.mlp.fc2.bias', 'decoder.blocks.3.norm1.weight', 'decoder.blocks.3.norm1.bias', 'decoder.blocks.3.attn.q_bias', 'decoder.blocks.3.attn.v_bias', 'decoder.blocks.3.attn.qkv.weight', 'decoder.blocks.3.attn.proj.weight', 'decoder.blocks.3.attn.proj.bias', 'decoder.blocks.3.norm2.weight', 'decoder.blocks.3.norm2.bias', 'decoder.blocks.3.mlp.fc1.weight', 'decoder.blocks.3.mlp.fc1.bias', 'decoder.blocks.3.mlp.fc2.weight', 'decoder.blocks.3.mlp.fc2.bias', 'decoder.norm.weight', 'decoder.norm.bias', 'decoder.head.weight', 'decoder.head.bias', 'encoder_to_decoder.weight', 'norm.weight', 'norm.bias']
+Model = VisionTransformer(
+  (patch_embed): PatchEmbed(
+    (proj): Conv3d(3, 384, kernel_size=(2, 16, 16), stride=(2, 16, 16))
+  )
+  (pos_drop): Dropout(p=0.0, inplace=False)
+  (blocks): ModuleList(
+    (0): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): Identity()
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (1): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.00909090880304575)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (2): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.0181818176060915)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (3): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.027272727340459824)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (4): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.036363635212183)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (5): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.045454543083906174)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (6): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.054545458406209946)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (7): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.06363636255264282)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (8): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.0727272778749466)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (9): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.08181818574666977)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (10): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.09090909361839294)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (11): Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=False)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): DropPath(p=0.10000000149011612)
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate=none)
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+  )
+  (norm): Identity()
+  (fc_norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+  (fc_dropout): Identity()
+  (head): Linear(in_features=384, out_features=174, bias=True)
+)
+number of params: 21946926
+LR = 0.00004688
+Batch size = 12
+Update frequent = 1
+Number of training examples = 33709
+Number of training training per epoch = 2809
+Assigned values = [0.009688901040699992, 0.01384128720099999, 0.019773267429999988, 0.028247524899999984, 0.04035360699999998, 0.05764800999999997, 0.08235429999999996, 0.11764899999999996, 0.16806999999999994, 0.24009999999999995, 0.3429999999999999, 0.48999999999999994, 0.7, 1.0]
+Skip weight decay list:  {'cls_token', 'pos_embed'}
+Param groups = {
+  "layer_0_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "patch_embed.proj.weight"
+    ],
+    "lr_scale": 0.009688901040699992
+  },
+  "layer_0_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "patch_embed.proj.bias"
+    ],
+    "lr_scale": 0.009688901040699992
+  },
+  "layer_1_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.0.norm1.weight",
+      "blocks.0.norm1.bias",
+      "blocks.0.attn.q_bias",
+      "blocks.0.attn.v_bias",
+      "blocks.0.attn.proj.bias",
+      "blocks.0.norm2.weight",
+      "blocks.0.norm2.bias",
+      "blocks.0.mlp.fc1.bias",
+      "blocks.0.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.01384128720099999
+  },
+  "layer_1_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.0.attn.qkv.weight",
+      "blocks.0.attn.proj.weight",
+      "blocks.0.mlp.fc1.weight",
+      "blocks.0.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.01384128720099999
+  },
+  "layer_2_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.1.norm1.weight",
+      "blocks.1.norm1.bias",
+      "blocks.1.attn.q_bias",
+      "blocks.1.attn.v_bias",
+      "blocks.1.attn.proj.bias",
+      "blocks.1.norm2.weight",
+      "blocks.1.norm2.bias",
+      "blocks.1.mlp.fc1.bias",
+      "blocks.1.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.019773267429999988
+  },
+  "layer_2_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.1.attn.qkv.weight",
+      "blocks.1.attn.proj.weight",
+      "blocks.1.mlp.fc1.weight",
+      "blocks.1.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.019773267429999988
+  },
+  "layer_3_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.2.norm1.weight",
+      "blocks.2.norm1.bias",
+      "blocks.2.attn.q_bias",
+      "blocks.2.attn.v_bias",
+      "blocks.2.attn.proj.bias",
+      "blocks.2.norm2.weight",
+      "blocks.2.norm2.bias",
+      "blocks.2.mlp.fc1.bias",
+      "blocks.2.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.028247524899999984
+  },
+  "layer_3_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.2.attn.qkv.weight",
+      "blocks.2.attn.proj.weight",
+      "blocks.2.mlp.fc1.weight",
+      "blocks.2.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.028247524899999984
+  },
+  "layer_4_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.3.norm1.weight",
+      "blocks.3.norm1.bias",
+      "blocks.3.attn.q_bias",
+      "blocks.3.attn.v_bias",
+      "blocks.3.attn.proj.bias",
+      "blocks.3.norm2.weight",
+      "blocks.3.norm2.bias",
+      "blocks.3.mlp.fc1.bias",
+      "blocks.3.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.04035360699999998
+  },
+  "layer_4_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.3.attn.qkv.weight",
+      "blocks.3.attn.proj.weight",
+      "blocks.3.mlp.fc1.weight",
+      "blocks.3.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.04035360699999998
+  },
+  "layer_5_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.4.norm1.weight",
+      "blocks.4.norm1.bias",
+      "blocks.4.attn.q_bias",
+      "blocks.4.attn.v_bias",
+      "blocks.4.attn.proj.bias",
+      "blocks.4.norm2.weight",
+      "blocks.4.norm2.bias",
+      "blocks.4.mlp.fc1.bias",
+      "blocks.4.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.05764800999999997
+  },
+  "layer_5_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.4.attn.qkv.weight",
+      "blocks.4.attn.proj.weight",
+      "blocks.4.mlp.fc1.weight",
+      "blocks.4.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.05764800999999997
+  },
+  "layer_6_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.5.norm1.weight",
+      "blocks.5.norm1.bias",
+      "blocks.5.attn.q_bias",
+      "blocks.5.attn.v_bias",
+      "blocks.5.attn.proj.bias",
+      "blocks.5.norm2.weight",
+      "blocks.5.norm2.bias",
+      "blocks.5.mlp.fc1.bias",
+      "blocks.5.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.08235429999999996
+  },
+  "layer_6_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.5.attn.qkv.weight",
+      "blocks.5.attn.proj.weight",
+      "blocks.5.mlp.fc1.weight",
+      "blocks.5.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.08235429999999996
+  },
+  "layer_7_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.6.norm1.weight",
+      "blocks.6.norm1.bias",
+      "blocks.6.attn.q_bias",
+      "blocks.6.attn.v_bias",
+      "blocks.6.attn.proj.bias",
+      "blocks.6.norm2.weight",
+      "blocks.6.norm2.bias",
+      "blocks.6.mlp.fc1.bias",
+      "blocks.6.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.11764899999999996
+  },
+  "layer_7_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.6.attn.qkv.weight",
+      "blocks.6.attn.proj.weight",
+      "blocks.6.mlp.fc1.weight",
+      "blocks.6.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.11764899999999996
+  },
+  "layer_8_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.7.norm1.weight",
+      "blocks.7.norm1.bias",
+      "blocks.7.attn.q_bias",
+      "blocks.7.attn.v_bias",
+      "blocks.7.attn.proj.bias",
+      "blocks.7.norm2.weight",
+      "blocks.7.norm2.bias",
+      "blocks.7.mlp.fc1.bias",
+      "blocks.7.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.16806999999999994
+  },
+  "layer_8_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.7.attn.qkv.weight",
+      "blocks.7.attn.proj.weight",
+      "blocks.7.mlp.fc1.weight",
+      "blocks.7.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.16806999999999994
+  },
+  "layer_9_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.8.norm1.weight",
+      "blocks.8.norm1.bias",
+      "blocks.8.attn.q_bias",
+      "blocks.8.attn.v_bias",
+      "blocks.8.attn.proj.bias",
+      "blocks.8.norm2.weight",
+      "blocks.8.norm2.bias",
+      "blocks.8.mlp.fc1.bias",
+      "blocks.8.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.24009999999999995
+  },
+  "layer_9_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.8.attn.qkv.weight",
+      "blocks.8.attn.proj.weight",
+      "blocks.8.mlp.fc1.weight",
+      "blocks.8.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.24009999999999995
+  },
+  "layer_10_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.9.norm1.weight",
+      "blocks.9.norm1.bias",
+      "blocks.9.attn.q_bias",
+      "blocks.9.attn.v_bias",
+      "blocks.9.attn.proj.bias",
+      "blocks.9.norm2.weight",
+      "blocks.9.norm2.bias",
+      "blocks.9.mlp.fc1.bias",
+      "blocks.9.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.3429999999999999
+  },
+  "layer_10_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.9.attn.qkv.weight",
+      "blocks.9.attn.proj.weight",
+      "blocks.9.mlp.fc1.weight",
+      "blocks.9.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.3429999999999999
+  },
+  "layer_11_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.10.norm1.weight",
+      "blocks.10.norm1.bias",
+      "blocks.10.attn.q_bias",
+      "blocks.10.attn.v_bias",
+      "blocks.10.attn.proj.bias",
+      "blocks.10.norm2.weight",
+      "blocks.10.norm2.bias",
+      "blocks.10.mlp.fc1.bias",
+      "blocks.10.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.48999999999999994
+  },
+  "layer_11_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.10.attn.qkv.weight",
+      "blocks.10.attn.proj.weight",
+      "blocks.10.mlp.fc1.weight",
+      "blocks.10.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.48999999999999994
+  },
+  "layer_12_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "blocks.11.norm1.weight",
+      "blocks.11.norm1.bias",
+      "blocks.11.attn.q_bias",
+      "blocks.11.attn.v_bias",
+      "blocks.11.attn.proj.bias",
+      "blocks.11.norm2.weight",
+      "blocks.11.norm2.bias",
+      "blocks.11.mlp.fc1.bias",
+      "blocks.11.mlp.fc2.bias"
+    ],
+    "lr_scale": 0.7
+  },
+  "layer_12_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "blocks.11.attn.qkv.weight",
+      "blocks.11.attn.proj.weight",
+      "blocks.11.mlp.fc1.weight",
+      "blocks.11.mlp.fc2.weight"
+    ],
+    "lr_scale": 0.7
+  },
+  "layer_13_no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "fc_norm.weight",
+      "fc_norm.bias",
+      "head.bias"
+    ],
+    "lr_scale": 1.0
+  },
+  "layer_13_decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "head.weight"
+    ],
+    "lr_scale": 1.0
+  }
+}
+[2025-01-15 13:19:42,026] [INFO] [logging.py:96:log_dist] [Rank -1] DeepSpeed info: version=0.13.1, git-hash=unknown, git-branch=unknown
+[2025-01-15 13:19:42,027] [INFO] [comm.py:637:init_distributed] cdb=None
+[2025-01-15 13:19:42,049] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+Using /home/maggie/.cache/torch_extensions/py310_cu116 as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home/maggie/.cache/torch_extensions/py310_cu116/fused_adam/build.ninja...
+Building extension module fused_adam...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module fused_adam...
+Time to load fused_adam op: 0.03794145584106445 seconds
+[2025-01-15 13:19:42,240] [INFO] [logging.py:96:log_dist] [Rank 0] Using DeepSpeed Optimizer param name adam as basic optimizer
+[2025-01-15 13:19:42,241] [INFO] [logging.py:96:log_dist] [Rank 0] Removing param_group that has no 'params' in the basic Optimizer
+[2025-01-15 13:19:42,242] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Basic Optimizer = FusedAdam
+[2025-01-15 13:19:42,243] [INFO] [logging.py:96:log_dist] [Rank 0] Creating fp16 optimizer with dynamic loss scale
+[2025-01-15 13:19:42,248] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Final Optimizer = adam
+[2025-01-15 13:19:42,249] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed using client LR scheduler
+[2025-01-15 13:19:42,249] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed LR Scheduler = None
+[2025-01-15 13:19:42,249] [INFO] [logging.py:96:log_dist] [Rank 0] step=0, skipped=0, lr=[0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001], mom=[[0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999]]
+[2025-01-15 13:19:42,249] [INFO] [config.py:984:print] DeepSpeedEngine configuration:
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   activation_checkpointing_config  {
+    "partition_activations": false, 
+    "contiguous_memory_optimization": false, 
+    "cpu_checkpointing": false, 
+    "number_checkpoints": null, 
+    "synchronize_checkpoint_boundary": false, 
+    "profile": false
+}
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'thread_count': 1, 'single_submit': False, 'overlap_events': True}
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   amp_enabled .................. False
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   amp_params ................... False
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   autotuning_config ............ {
+    "enabled": false, 
+    "start_step": null, 
+    "end_step": null, 
+    "metric_path": null, 
+    "arg_mappings": null, 
+    "metric": "throughput", 
+    "model_info": null, 
+    "results_dir": "autotuning_results", 
+    "exps_dir": "autotuning_exps", 
+    "overwrite": true, 
+    "fast": true, 
+    "start_profile_step": 3, 
+    "end_profile_step": 5, 
+    "tuner_type": "gridsearch", 
+    "tuner_early_stopping": 5, 
+    "tuner_num_trials": 50, 
+    "model_info_path": null, 
+    "mp_size": 1, 
+    "max_train_batch_size": null, 
+    "min_train_batch_size": 1, 
+    "max_train_micro_batch_size_per_gpu": 1.024000e+03, 
+    "min_train_micro_batch_size_per_gpu": 1, 
+    "num_tuning_micro_batch_sizes": 3
+}
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   bfloat16_enabled ............. False
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   checkpoint_parallel_write_pipeline  False
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   checkpoint_tag_validation_enabled  True
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   checkpoint_tag_validation_fail  False
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x7f4a7bfe2e90>
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   communication_data_type ...... None
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   curriculum_enabled_legacy .... False
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   curriculum_params_legacy ..... False
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'curriculum_learning': {'enabled': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   data_efficiency_enabled ...... False
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   dataloader_drop_last ......... False
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   disable_allgather ............ False
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   dump_state ................... False
+[2025-01-15 13:19:42,249] [INFO] [config.py:988:print]   dynamic_loss_scale_args ...... {'init_scale': 128, 'scale_window': 128, 'delayed_shift': 2, 'consecutive_hysteresis': False, 'min_scale': 1}
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   eigenvalue_enabled ........... False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   eigenvalue_gas_boundary_resolution  1
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   eigenvalue_layer_num ......... 0
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   eigenvalue_max_iter .......... 100
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   eigenvalue_stability ......... 1e-06
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   eigenvalue_tol ............... 0.01
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   eigenvalue_verbose ........... False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   elasticity_enabled ........... False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   flops_profiler_config ........ {
+    "enabled": false, 
+    "recompute_fwd_factor": 0.0, 
+    "profile_step": 1, 
+    "module_depth": -1, 
+    "top_modules": 1, 
+    "detailed": true, 
+    "output_file": null
+}
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   fp16_auto_cast ............... False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   fp16_enabled ................. True
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   fp16_master_weights_and_gradients  False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   global_rank .................. 0
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   grad_accum_dtype ............. None
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   gradient_accumulation_steps .. 1
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   gradient_clipping ............ 0.0
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   gradient_predivide_factor .... 1.0
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   graph_harvesting ............. False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   initial_dynamic_scale ........ 128
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   load_universal_checkpoint .... False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   loss_scale ................... 0
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   memory_breakdown ............. False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   mics_hierarchial_params_gather  False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   mics_shard_size .............. -1
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') enabled=False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   nebula_config ................ {
+    "enabled": false, 
+    "persistent_storage_path": null, 
+    "persistent_time_interval": 100, 
+    "num_of_version_in_retention": 2, 
+    "enable_nebula_load": true, 
+    "load_path": null
+}
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   optimizer_legacy_fusion ...... False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   optimizer_name ............... adam
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   optimizer_params ............. {'lr': 0.001, 'weight_decay': 0.05, 'bias_correction': True, 'betas': [0.9, 0.999], 'eps': 1e-08}
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0, 'pipe_partitioned': True, 'grad_partitioned': True}
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   pld_enabled .................. False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   pld_params ................... False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   prescale_gradients ........... False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   scheduler_name ............... None
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   scheduler_params ............. None
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   seq_parallel_communication_data_type  torch.float32
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   sparse_attention ............. None
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   sparse_gradients_enabled ..... False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   steps_per_print .............. 1000
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   train_batch_size ............. 12
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   train_micro_batch_size_per_gpu  12
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   use_data_before_expert_parallel_  False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   use_node_local_storage ....... False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   wall_clock_breakdown ......... False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   weight_quantization_config ... None
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   world_size ................... 1
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   zero_allow_untested_optimizer  False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   zero_config .................. stage=0 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500,000,000 use_multi_rank_bucket_allreduce=True allgather_partitions=True allgather_bucket_size=500,000,000 overlap_comm=False load_from_fp32_weights=True elastic_checkpoint=False offload_param=None offload_optimizer=None sub_group_size=1,000,000,000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=50,000,000 param_persistence_threshold=100,000 model_persistence_threshold=sys.maxsize max_live_parameters=1,000,000,000 max_reuse_distance=1,000,000,000 gather_16bit_weights_on_model_save=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_nontrainable_weights=False zero_quantized_gradients=False mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True pipeline_loading_checkpoint=False override_module_apply=True
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   zero_enabled ................. False
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   zero_force_ds_cpu_optimizer .. True
+[2025-01-15 13:19:42,250] [INFO] [config.py:988:print]   zero_optimization_stage ...... 0
+[2025-01-15 13:19:42,250] [INFO] [config.py:974:print_user_config]   json = {
+    "train_batch_size": 12, 
+    "train_micro_batch_size_per_gpu": 12, 
+    "steps_per_print": 1000, 
+    "optimizer": {
+        "type": "Adam", 
+        "adam_w_mode": true, 
+        "params": {
+            "lr": 0.001, 
+            "weight_decay": 0.05, 
+            "bias_correction": true, 
+            "betas": [0.9, 0.999], 
+            "eps": 1e-08
+        }
+    }, 
+    "fp16": {
+        "enabled": true, 
+        "loss_scale": 0, 
+        "initial_scale_power": 7, 
+        "loss_scale_window": 128
+    }
+}
+model.gradient_accumulation_steps() = 1
+Use step level LR scheduler!
+Set warmup steps = 14045
+Set warmup steps = 0
+Max WD = 0.0500000, Min WD = 0.0500000
+criterion = SoftTargetCrossEntropy()
+Start training for 40 epochs
+train curriculum learning mask.
+Epoch: [0]  [   0/2809]  eta: 6:24:32  lr: 0.000000  min_lr: 0.000000  loss: 5.1602 (5.1602)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 8.2137  data: 4.4485  max mem: 15572
+Epoch: [0]  [  10/2809]  eta: 0:50:39  lr: 0.000000  min_lr: 0.000000  loss: 5.1602 (5.1601)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 1.0859  data: 0.4046  max mem: 15572
+Epoch: [0]  [  20/2809]  eta: 0:34:33  lr: 0.000000  min_lr: 0.000000  loss: 5.1602 (5.1601)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3700  data: 0.0002  max mem: 15572
+Epoch: [0]  [  30/2809]  eta: 0:28:48  lr: 0.000000  min_lr: 0.000000  loss: 5.1602 (5.1601)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3667  data: 0.0002  max mem: 15572
+Epoch: [0]  [  40/2809]  eta: 0:25:51  lr: 0.000000  min_lr: 0.000000  loss: 5.1601 (5.1601)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3681  data: 0.0002  max mem: 15572
+Epoch: [0]  [  50/2809]  eta: 0:24:02  lr: 0.000000  min_lr: 0.000000  loss: 5.1601 (5.1601)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3694  data: 0.0002  max mem: 15572
+Epoch: [0]  [  60/2809]  eta: 0:22:48  lr: 0.000000  min_lr: 0.000000  loss: 5.1600 (5.1601)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3691  data: 0.0002  max mem: 15572
+Epoch: [0]  [  70/2809]  eta: 0:21:52  lr: 0.000000  min_lr: 0.000000  loss: 5.1599 (5.1600)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3680  data: 0.0002  max mem: 15572
+Epoch: [0]  [  80/2809]  eta: 0:21:12  lr: 0.000000  min_lr: 0.000000  loss: 5.1598 (5.1600)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3705  data: 0.0003  max mem: 15572
+Epoch: [0]  [  90/2809]  eta: 0:20:40  lr: 0.000000  min_lr: 0.000000  loss: 5.1597 (5.1600)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3744  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 100/2809]  eta: 0:20:18  lr: 0.000000  min_lr: 0.000000  loss: 5.1594 (5.1599)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3838  data: 0.0004  max mem: 15572
+Epoch: [0]  [ 110/2809]  eta: 0:19:58  lr: 0.000000  min_lr: 0.000000  loss: 5.1590 (5.1598)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3898  data: 0.0005  max mem: 15572
+Epoch: [0]  [ 120/2809]  eta: 0:19:37  lr: 0.000000  min_lr: 0.000000  loss: 5.1588 (5.1597)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (128.0000)  weight_decay: 0.0500 (0.0500)  time: 0.3768  data: 0.0003  max mem: 15572
+[2025-01-15 13:20:38,463] [INFO] [fused_optimizer.py:352:_update_scale] No Grad overflow for 128 iterations
+[2025-01-15 13:20:38,463] [INFO] [fused_optimizer.py:353:_update_scale] Increasing dynamic loss scale from 128 to 256
+Epoch: [0]  [ 130/2809]  eta: 0:19:19  lr: 0.000000  min_lr: 0.000000  loss: 5.1587 (5.1596)  class_acc: 0.0000 (0.0000)  loss_scale: 128.0000 (130.9313)  weight_decay: 0.0500 (0.0500)  time: 0.3686  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 140/2809]  eta: 0:19:02  lr: 0.000000  min_lr: 0.000000  loss: 5.1583 (5.1595)  class_acc: 0.0000 (0.0000)  loss_scale: 256.0000 (139.8014)  weight_decay: 0.0500 (0.0500)  time: 0.3700  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 150/2809]  eta: 0:18:49  lr: 0.000001  min_lr: 0.000000  loss: 5.1583 (5.1595)  class_acc: 0.0000 (0.0000)  loss_scale: 256.0000 (147.4967)  weight_decay: 0.0500 (0.0500)  time: 0.3739  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 160/2809]  eta: 0:18:36  lr: 0.000001  min_lr: 0.000000  loss: 5.1584 (5.1594)  class_acc: 0.0000 (0.0000)  loss_scale: 256.0000 (154.2360)  weight_decay: 0.0500 (0.0500)  time: 0.3728  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 170/2809]  eta: 0:18:23  lr: 0.000001  min_lr: 0.000000  loss: 5.1582 (5.1593)  class_acc: 0.0000 (0.0000)  loss_scale: 256.0000 (160.1871)  weight_decay: 0.0500 (0.0500)  time: 0.3685  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 180/2809]  eta: 0:18:13  lr: 0.000001  min_lr: 0.000000  loss: 5.1581 (5.1593)  class_acc: 0.0000 (0.0000)  loss_scale: 256.0000 (165.4807)  weight_decay: 0.0500 (0.0500)  time: 0.3713  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 190/2809]  eta: 0:18:03  lr: 0.000001  min_lr: 0.000000  loss: 5.1581 (5.1592)  class_acc: 0.0000 (0.0000)  loss_scale: 256.0000 (170.2199)  weight_decay: 0.0500 (0.0500)  time: 0.3739  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 200/2809]  eta: 0:17:54  lr: 0.000001  min_lr: 0.000000  loss: 5.1581 (5.1592)  class_acc: 0.0000 (0.0000)  loss_scale: 256.0000 (174.4876)  weight_decay: 0.0500 (0.0500)  time: 0.3754  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 210/2809]  eta: 0:17:46  lr: 0.000001  min_lr: 0.000000  loss: 5.1580 (5.1591)  class_acc: 0.0000 (0.0000)  loss_scale: 256.0000 (178.3507)  weight_decay: 0.0500 (0.0500)  time: 0.3773  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 220/2809]  eta: 0:17:37  lr: 0.000001  min_lr: 0.000000  loss: 5.1580 (5.1591)  class_acc: 0.0000 (0.0000)  loss_scale: 256.0000 (181.8643)  weight_decay: 0.0500 (0.0500)  time: 0.3757  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 230/2809]  eta: 0:17:29  lr: 0.000001  min_lr: 0.000000  loss: 5.1577 (5.1590)  class_acc: 0.0000 (0.0000)  loss_scale: 256.0000 (185.0736)  weight_decay: 0.0500 (0.0500)  time: 0.3720  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 240/2809]  eta: 0:17:21  lr: 0.000001  min_lr: 0.000000  loss: 5.1575 (5.1589)  class_acc: 0.0000 (0.0000)  loss_scale: 256.0000 (188.0166)  weight_decay: 0.0500 (0.0500)  time: 0.3722  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 250/2809]  eta: 0:17:14  lr: 0.000001  min_lr: 0.000000  loss: 5.1574 (5.1589)  class_acc: 0.0000 (0.0000)  loss_scale: 256.0000 (190.7251)  weight_decay: 0.0500 (0.0500)  time: 0.3751  data: 0.0002  max mem: 15572
+[2025-01-15 13:21:26,254] [INFO] [fused_optimizer.py:352:_update_scale] No Grad overflow for 128 iterations
+[2025-01-15 13:21:26,254] [INFO] [fused_optimizer.py:353:_update_scale] Increasing dynamic loss scale from 256 to 512
+Epoch: [0]  [ 260/2809]  eta: 0:17:07  lr: 0.000001  min_lr: 0.000000  loss: 5.1575 (5.1588)  class_acc: 0.0000 (0.0000)  loss_scale: 256.0000 (198.1303)  weight_decay: 0.0500 (0.0500)  time: 0.3735  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 270/2809]  eta: 0:17:00  lr: 0.000001  min_lr: 0.000000  loss: 5.1575 (5.1588)  class_acc: 0.0000 (0.0000)  loss_scale: 512.0000 (209.7122)  weight_decay: 0.0500 (0.0500)  time: 0.3726  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 280/2809]  eta: 0:16:54  lr: 0.000001  min_lr: 0.000000  loss: 5.1571 (5.1587)  class_acc: 0.0000 (0.0000)  loss_scale: 512.0000 (220.4698)  weight_decay: 0.0500 (0.0500)  time: 0.3751  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 290/2809]  eta: 0:16:47  lr: 0.000001  min_lr: 0.000000  loss: 5.1571 (5.1586)  class_acc: 0.0000 (0.0000)  loss_scale: 512.0000 (230.4880)  weight_decay: 0.0500 (0.0500)  time: 0.3739  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 300/2809]  eta: 0:16:42  lr: 0.000001  min_lr: 0.000000  loss: 5.1563 (5.1585)  class_acc: 0.0000 (0.0000)  loss_scale: 512.0000 (239.8405)  weight_decay: 0.0500 (0.0500)  time: 0.3768  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 310/2809]  eta: 0:16:36  lr: 0.000001  min_lr: 0.000000  loss: 5.1564 (5.1585)  class_acc: 0.0000 (0.0000)  loss_scale: 512.0000 (248.5916)  weight_decay: 0.0500 (0.0500)  time: 0.3782  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 320/2809]  eta: 0:16:30  lr: 0.000001  min_lr: 0.000000  loss: 5.1562 (5.1584)  class_acc: 0.0000 (0.0000)  loss_scale: 512.0000 (256.7975)  weight_decay: 0.0500 (0.0500)  time: 0.3754  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 330/2809]  eta: 0:16:24  lr: 0.000001  min_lr: 0.000000  loss: 5.1557 (5.1583)  class_acc: 0.0000 (0.0000)  loss_scale: 512.0000 (264.5076)  weight_decay: 0.0500 (0.0500)  time: 0.3761  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 340/2809]  eta: 0:16:19  lr: 0.000001  min_lr: 0.000000  loss: 5.1557 (5.1583)  class_acc: 0.0000 (0.0000)  loss_scale: 512.0000 (271.7654)  weight_decay: 0.0500 (0.0500)  time: 0.3742  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 350/2809]  eta: 0:16:13  lr: 0.000001  min_lr: 0.000000  loss: 5.1553 (5.1582)  class_acc: 0.0000 (0.0000)  loss_scale: 512.0000 (278.6097)  weight_decay: 0.0500 (0.0500)  time: 0.3739  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 360/2809]  eta: 0:16:08  lr: 0.000001  min_lr: 0.000000  loss: 5.1548 (5.1581)  class_acc: 0.0000 (0.0000)  loss_scale: 512.0000 (285.0748)  weight_decay: 0.0500 (0.0500)  time: 0.3732  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 370/2809]  eta: 0:16:02  lr: 0.000001  min_lr: 0.000000  loss: 5.1546 (5.1580)  class_acc: 0.0000 (0.0000)  loss_scale: 512.0000 (291.1914)  weight_decay: 0.0500 (0.0500)  time: 0.3726  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 380/2809]  eta: 0:15:57  lr: 0.000001  min_lr: 0.000000  loss: 5.1540 (5.1579)  class_acc: 0.0000 (0.0000)  loss_scale: 512.0000 (296.9869)  weight_decay: 0.0500 (0.0500)  time: 0.3776  data: 0.0002  max mem: 15572
+[2025-01-15 13:22:14,362] [INFO] [fused_optimizer.py:352:_update_scale] No Grad overflow for 128 iterations
+[2025-01-15 13:22:14,362] [INFO] [fused_optimizer.py:353:_update_scale] Increasing dynamic loss scale from 512 to 1024
+Epoch: [0]  [ 390/2809]  eta: 0:15:53  lr: 0.000001  min_lr: 0.000000  loss: 5.1535 (5.1578)  class_acc: 0.0000 (0.0000)  loss_scale: 512.0000 (311.6522)  weight_decay: 0.0500 (0.0500)  time: 0.3868  data: 0.0004  max mem: 15572
+Epoch: [0]  [ 400/2809]  eta: 0:15:48  lr: 0.000001  min_lr: 0.000000  loss: 5.1528 (5.1577)  class_acc: 0.0000 (0.0000)  loss_scale: 1024.0000 (329.4165)  weight_decay: 0.0500 (0.0500)  time: 0.3848  data: 0.0004  max mem: 15572
+Epoch: [0]  [ 410/2809]  eta: 0:15:43  lr: 0.000001  min_lr: 0.000000  loss: 5.1539 (5.1576)  class_acc: 0.0000 (0.0000)  loss_scale: 1024.0000 (346.3163)  weight_decay: 0.0500 (0.0500)  time: 0.3740  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 420/2809]  eta: 0:15:38  lr: 0.000001  min_lr: 0.000000  loss: 5.1533 (5.1574)  class_acc: 0.0000 (0.0000)  loss_scale: 1024.0000 (362.4133)  weight_decay: 0.0500 (0.0500)  time: 0.3728  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 430/2809]  eta: 0:15:33  lr: 0.000001  min_lr: 0.000000  loss: 5.1515 (5.1573)  class_acc: 0.0000 (0.0000)  loss_scale: 1024.0000 (377.7633)  weight_decay: 0.0500 (0.0500)  time: 0.3735  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 440/2809]  eta: 0:15:28  lr: 0.000001  min_lr: 0.000000  loss: 5.1523 (5.1572)  class_acc: 0.0000 (0.0000)  loss_scale: 1024.0000 (392.4172)  weight_decay: 0.0500 (0.0500)  time: 0.3725  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 450/2809]  eta: 0:15:23  lr: 0.000002  min_lr: 0.000000  loss: 5.1521 (5.1571)  class_acc: 0.0000 (0.0000)  loss_scale: 1024.0000 (406.4213)  weight_decay: 0.0500 (0.0500)  time: 0.3728  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 460/2809]  eta: 0:15:18  lr: 0.000002  min_lr: 0.000000  loss: 5.1498 (5.1569)  class_acc: 0.0000 (0.0000)  loss_scale: 1024.0000 (419.8178)  weight_decay: 0.0500 (0.0500)  time: 0.3735  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 470/2809]  eta: 0:15:14  lr: 0.000002  min_lr: 0.000000  loss: 5.1495 (5.1567)  class_acc: 0.0000 (0.0000)  loss_scale: 1024.0000 (432.6454)  weight_decay: 0.0500 (0.0500)  time: 0.3742  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 480/2809]  eta: 0:15:09  lr: 0.000002  min_lr: 0.000000  loss: 5.1487 (5.1566)  class_acc: 0.0000 (0.0000)  loss_scale: 1024.0000 (444.9397)  weight_decay: 0.0500 (0.0500)  time: 0.3742  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 490/2809]  eta: 0:15:04  lr: 0.000002  min_lr: 0.000000  loss: 5.1476 (5.1564)  class_acc: 0.0000 (0.0000)  loss_scale: 1024.0000 (456.7332)  weight_decay: 0.0500 (0.0500)  time: 0.3765  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 500/2809]  eta: 0:15:00  lr: 0.000002  min_lr: 0.000000  loss: 5.1460 (5.1562)  class_acc: 0.0000 (0.0000)  loss_scale: 1024.0000 (468.0559)  weight_decay: 0.0500 (0.0500)  time: 0.3746  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 510/2809]  eta: 0:14:55  lr: 0.000002  min_lr: 0.000000  loss: 5.1458 (5.1560)  class_acc: 0.0000 (0.0000)  loss_scale: 1024.0000 (478.9354)  weight_decay: 0.0500 (0.0500)  time: 0.3725  data: 0.0003  max mem: 15572
+[2025-01-15 13:23:02,351] [INFO] [fused_optimizer.py:352:_update_scale] No Grad overflow for 128 iterations
+[2025-01-15 13:23:02,351] [INFO] [fused_optimizer.py:353:_update_scale] Increasing dynamic loss scale from 1024 to 2048
+Epoch: [0]  [ 520/2809]  eta: 0:14:50  lr: 0.000002  min_lr: 0.000000  loss: 5.1448 (5.1557)  class_acc: 0.0000 (0.0000)  loss_scale: 1024.0000 (507.0864)  weight_decay: 0.0500 (0.0500)  time: 0.3752  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 530/2809]  eta: 0:14:46  lr: 0.000002  min_lr: 0.000000  loss: 5.1448 (5.1555)  class_acc: 0.0000 (0.0000)  loss_scale: 2048.0000 (536.1055)  weight_decay: 0.0500 (0.0500)  time: 0.3759  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 540/2809]  eta: 0:14:42  lr: 0.000002  min_lr: 0.000000  loss: 5.1446 (5.1553)  class_acc: 0.0000 (0.0000)  loss_scale: 2048.0000 (564.0518)  weight_decay: 0.0500 (0.0500)  time: 0.3756  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 550/2809]  eta: 0:14:37  lr: 0.000002  min_lr: 0.000000  loss: 5.1431 (5.1551)  class_acc: 0.0000 (0.0000)  loss_scale: 2048.0000 (590.9837)  weight_decay: 0.0500 (0.0500)  time: 0.3763  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 560/2809]  eta: 0:14:33  lr: 0.000002  min_lr: 0.000000  loss: 5.1431 (5.1549)  class_acc: 0.0000 (0.0000)  loss_scale: 2048.0000 (616.9554)  weight_decay: 0.0500 (0.0500)  time: 0.3786  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 570/2809]  eta: 0:14:29  lr: 0.000002  min_lr: 0.000000  loss: 5.1401 (5.1547)  class_acc: 0.0000 (0.0000)  loss_scale: 2048.0000 (642.0175)  weight_decay: 0.0500 (0.0500)  time: 0.3781  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 580/2809]  eta: 0:14:25  lr: 0.000002  min_lr: 0.000000  loss: 5.1412 (5.1545)  class_acc: 0.0000 (0.0000)  loss_scale: 2048.0000 (666.2169)  weight_decay: 0.0500 (0.0500)  time: 0.3800  data: 0.0022  max mem: 15572
+Epoch: [0]  [ 590/2809]  eta: 0:14:21  lr: 0.000002  min_lr: 0.000000  loss: 5.1408 (5.1543)  class_acc: 0.0000 (0.0000)  loss_scale: 2048.0000 (689.5973)  weight_decay: 0.0500 (0.0500)  time: 0.3875  data: 0.0023  max mem: 15572
+Epoch: [0]  [ 600/2809]  eta: 0:14:17  lr: 0.000002  min_lr: 0.000000  loss: 5.1378 (5.1540)  class_acc: 0.0000 (0.0000)  loss_scale: 2048.0000 (712.1997)  weight_decay: 0.0500 (0.0500)  time: 0.3877  data: 0.0004  max mem: 15572
+Epoch: [0]  [ 610/2809]  eta: 0:14:13  lr: 0.000002  min_lr: 0.000000  loss: 5.1377 (5.1537)  class_acc: 0.0000 (0.0000)  loss_scale: 2048.0000 (734.0622)  weight_decay: 0.0500 (0.0500)  time: 0.3877  data: 0.0005  max mem: 15572
+Epoch: [0]  [ 620/2809]  eta: 0:14:09  lr: 0.000002  min_lr: 0.000000  loss: 5.1336 (5.1534)  class_acc: 0.0000 (0.0000)  loss_scale: 2048.0000 (755.2206)  weight_decay: 0.0500 (0.0500)  time: 0.3883  data: 0.0005  max mem: 15572
+Epoch: [0]  [ 630/2809]  eta: 0:14:05  lr: 0.000002  min_lr: 0.000000  loss: 5.1332 (5.1532)  class_acc: 0.0000 (0.0000)  loss_scale: 2048.0000 (775.7084)  weight_decay: 0.0500 (0.0500)  time: 0.3792  data: 0.0003  max mem: 15572
+[2025-01-15 13:23:51,067] [INFO] [fused_optimizer.py:352:_update_scale] No Grad overflow for 128 iterations
+[2025-01-15 13:23:51,067] [INFO] [fused_optimizer.py:353:_update_scale] Increasing dynamic loss scale from 2048 to 4096
+Epoch: [0]  [ 640/2809]  eta: 0:14:00  lr: 0.000002  min_lr: 0.000000  loss: 5.1386 (5.1530)  class_acc: 0.0000 (0.0000)  loss_scale: 2048.0000 (798.7520)  weight_decay: 0.0500 (0.0500)  time: 0.3738  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 650/2809]  eta: 0:13:56  lr: 0.000002  min_lr: 0.000000  loss: 5.1342 (5.1526)  class_acc: 0.0000 (0.0000)  loss_scale: 4096.0000 (849.4009)  weight_decay: 0.0500 (0.0500)  time: 0.3752  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 660/2809]  eta: 0:13:52  lr: 0.000002  min_lr: 0.000000  loss: 5.1293 (5.1523)  class_acc: 0.0000 (0.0000)  loss_scale: 4096.0000 (898.5174)  weight_decay: 0.0500 (0.0500)  time: 0.3740  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 670/2809]  eta: 0:13:47  lr: 0.000002  min_lr: 0.000000  loss: 5.1294 (5.1520)  class_acc: 0.0000 (0.0000)  loss_scale: 4096.0000 (946.1699)  weight_decay: 0.0500 (0.0500)  time: 0.3732  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 680/2809]  eta: 0:13:43  lr: 0.000002  min_lr: 0.000000  loss: 5.1236 (5.1516)  class_acc: 0.0000 (0.0000)  loss_scale: 4096.0000 (992.4229)  weight_decay: 0.0500 (0.0500)  time: 0.3736  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 690/2809]  eta: 0:13:39  lr: 0.000002  min_lr: 0.000000  loss: 5.1250 (5.1513)  class_acc: 0.0000 (0.0000)  loss_scale: 4096.0000 (1037.3372)  weight_decay: 0.0500 (0.0500)  time: 0.3751  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 700/2809]  eta: 0:13:35  lr: 0.000002  min_lr: 0.000000  loss: 5.1352 (5.1511)  class_acc: 0.0000 (0.0000)  loss_scale: 4096.0000 (1080.9700)  weight_decay: 0.0500 (0.0500)  time: 0.3736  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 710/2809]  eta: 0:13:31  lr: 0.000002  min_lr: 0.000000  loss: 5.1336 (5.1507)  class_acc: 0.0000 (0.0000)  loss_scale: 4096.0000 (1123.3755)  weight_decay: 0.0500 (0.0500)  time: 0.3774  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 720/2809]  eta: 0:13:27  lr: 0.000002  min_lr: 0.000000  loss: 5.1255 (5.1504)  class_acc: 0.0000 (0.0000)  loss_scale: 4096.0000 (1164.6047)  weight_decay: 0.0500 (0.0500)  time: 0.3843  data: 0.0004  max mem: 15572
+Epoch: [0]  [ 730/2809]  eta: 0:13:22  lr: 0.000002  min_lr: 0.000000  loss: 5.1248 (5.1500)  class_acc: 0.0000 (0.0000)  loss_scale: 4096.0000 (1204.7059)  weight_decay: 0.0500 (0.0500)  time: 0.3779  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 740/2809]  eta: 0:13:19  lr: 0.000002  min_lr: 0.000000  loss: 5.1248 (5.1497)  class_acc: 0.0000 (0.0000)  loss_scale: 4096.0000 (1243.7247)  weight_decay: 0.0500 (0.0500)  time: 0.3785  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 750/2809]  eta: 0:13:14  lr: 0.000003  min_lr: 0.000000  loss: 5.1158 (5.1492)  class_acc: 0.0000 (0.0000)  loss_scale: 4096.0000 (1281.7044)  weight_decay: 0.0500 (0.0500)  time: 0.3791  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 760/2809]  eta: 0:13:10  lr: 0.000003  min_lr: 0.000000  loss: 5.1160 (5.1489)  class_acc: 0.0000 (0.0000)  loss_scale: 4096.0000 (1318.6859)  weight_decay: 0.0500 (0.0500)  time: 0.3720  data: 0.0002  max mem: 15572
+[2025-01-15 13:24:39,194] [INFO] [fused_optimizer.py:352:_update_scale] No Grad overflow for 128 iterations
+[2025-01-15 13:24:39,195] [INFO] [fused_optimizer.py:353:_update_scale] Increasing dynamic loss scale from 4096 to 8192
+Epoch: [0]  [ 770/2809]  eta: 0:13:06  lr: 0.000003  min_lr: 0.000000  loss: 5.1200 (5.1485)  class_acc: 0.0000 (0.0000)  loss_scale: 4096.0000 (1370.6459)  weight_decay: 0.0500 (0.0500)  time: 0.3718  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 780/2809]  eta: 0:13:02  lr: 0.000003  min_lr: 0.000000  loss: 5.1198 (5.1481)  class_acc: 0.0000 (0.0000)  loss_scale: 8192.0000 (1457.9872)  weight_decay: 0.0500 (0.0500)  time: 0.3714  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 790/2809]  eta: 0:12:57  lr: 0.000003  min_lr: 0.000000  loss: 5.1174 (5.1478)  class_acc: 0.0000 (0.0000)  loss_scale: 8192.0000 (1543.1201)  weight_decay: 0.0500 (0.0500)  time: 0.3706  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 800/2809]  eta: 0:12:53  lr: 0.000003  min_lr: 0.000000  loss: 5.1111 (5.1473)  class_acc: 0.0000 (0.0000)  loss_scale: 8192.0000 (1626.1273)  weight_decay: 0.0500 (0.0500)  time: 0.3728  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 810/2809]  eta: 0:12:50  lr: 0.000003  min_lr: 0.000000  loss: 5.1104 (5.1469)  class_acc: 0.0000 (0.0000)  loss_scale: 8192.0000 (1707.0875)  weight_decay: 0.0500 (0.0500)  time: 0.3839  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 820/2809]  eta: 0:12:45  lr: 0.000003  min_lr: 0.000000  loss: 5.1177 (5.1466)  class_acc: 0.0000 (0.0000)  loss_scale: 8192.0000 (1786.0755)  weight_decay: 0.0500 (0.0500)  time: 0.3843  data: 0.0004  max mem: 15572
+Epoch: [0]  [ 830/2809]  eta: 0:12:41  lr: 0.000003  min_lr: 0.000000  loss: 5.1069 (5.1461)  class_acc: 0.0000 (0.0000)  loss_scale: 8192.0000 (1863.1625)  weight_decay: 0.0500 (0.0500)  time: 0.3736  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 840/2809]  eta: 0:12:37  lr: 0.000003  min_lr: 0.000000  loss: 5.1029 (5.1457)  class_acc: 0.0000 (0.0000)  loss_scale: 8192.0000 (1938.4162)  weight_decay: 0.0500 (0.0500)  time: 0.3728  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 850/2809]  eta: 0:12:33  lr: 0.000003  min_lr: 0.000000  loss: 5.1073 (5.1453)  class_acc: 0.0000 (0.0000)  loss_scale: 8192.0000 (2011.9013)  weight_decay: 0.0500 (0.0500)  time: 0.3766  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 860/2809]  eta: 0:12:29  lr: 0.000003  min_lr: 0.000000  loss: 5.1060 (5.1449)  class_acc: 0.0000 (0.0000)  loss_scale: 8192.0000 (2083.6794)  weight_decay: 0.0500 (0.0500)  time: 0.3768  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 870/2809]  eta: 0:12:25  lr: 0.000003  min_lr: 0.000000  loss: 5.1059 (5.1446)  class_acc: 0.0000 (0.0000)  loss_scale: 8192.0000 (2153.8094)  weight_decay: 0.0500 (0.0500)  time: 0.3770  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 880/2809]  eta: 0:12:21  lr: 0.000003  min_lr: 0.000000  loss: 5.1020 (5.1441)  class_acc: 0.0000 (0.0000)  loss_scale: 8192.0000 (2222.3473)  weight_decay: 0.0500 (0.0500)  time: 0.3760  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 890/2809]  eta: 0:12:17  lr: 0.000003  min_lr: 0.000000  loss: 5.1010 (5.1438)  class_acc: 0.0000 (0.0000)  loss_scale: 8192.0000 (2289.3468)  weight_decay: 0.0500 (0.0500)  time: 0.3712  data: 0.0002  max mem: 15572
+[2025-01-15 13:25:27,243] [INFO] [fused_optimizer.py:352:_update_scale] No Grad overflow for 128 iterations
+[2025-01-15 13:25:27,244] [INFO] [fused_optimizer.py:353:_update_scale] Increasing dynamic loss scale from 8192 to 16384
+Epoch: [0]  [ 900/2809]  eta: 0:12:13  lr: 0.000003  min_lr: 0.000000  loss: 5.1123 (5.1435)  class_acc: 0.0000 (0.0000)  loss_scale: 8192.0000 (2400.3196)  weight_decay: 0.0500 (0.0500)  time: 0.3788  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 910/2809]  eta: 0:12:10  lr: 0.000003  min_lr: 0.000000  loss: 5.1084 (5.1431)  class_acc: 0.0000 (0.0000)  loss_scale: 16384.0000 (2553.8178)  weight_decay: 0.0500 (0.0500)  time: 0.3926  data: 0.0004  max mem: 15572
+Epoch: [0]  [ 920/2809]  eta: 0:12:05  lr: 0.000003  min_lr: 0.000000  loss: 5.1062 (5.1427)  class_acc: 0.0000 (0.0000)  loss_scale: 16384.0000 (2703.9826)  weight_decay: 0.0500 (0.0500)  time: 0.3844  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 930/2809]  eta: 0:12:01  lr: 0.000003  min_lr: 0.000000  loss: 5.1084 (5.1424)  class_acc: 0.0000 (0.0000)  loss_scale: 16384.0000 (2850.9216)  weight_decay: 0.0500 (0.0500)  time: 0.3733  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 940/2809]  eta: 0:11:57  lr: 0.000003  min_lr: 0.000000  loss: 5.1050 (5.1420)  class_acc: 0.0000 (0.0000)  loss_scale: 16384.0000 (2994.7375)  weight_decay: 0.0500 (0.0500)  time: 0.3746  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 950/2809]  eta: 0:11:53  lr: 0.000003  min_lr: 0.000000  loss: 5.1058 (5.1417)  class_acc: 0.0000 (0.0000)  loss_scale: 16384.0000 (3135.5289)  weight_decay: 0.0500 (0.0500)  time: 0.3715  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 960/2809]  eta: 0:11:49  lr: 0.000003  min_lr: 0.000000  loss: 5.1060 (5.1412)  class_acc: 0.0000 (0.0000)  loss_scale: 16384.0000 (3273.3902)  weight_decay: 0.0500 (0.0500)  time: 0.3705  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 970/2809]  eta: 0:11:45  lr: 0.000003  min_lr: 0.000000  loss: 5.1060 (5.1410)  class_acc: 0.0000 (0.0000)  loss_scale: 16384.0000 (3408.4119)  weight_decay: 0.0500 (0.0500)  time: 0.3744  data: 0.0002  max mem: 15572
+Epoch: [0]  [ 980/2809]  eta: 0:11:41  lr: 0.000003  min_lr: 0.000000  loss: 5.1072 (5.1405)  class_acc: 0.0000 (0.0000)  loss_scale: 16384.0000 (3540.6809)  weight_decay: 0.0500 (0.0500)  time: 0.3764  data: 0.0003  max mem: 15572
+Epoch: [0]  [ 990/2809]  eta: 0:11:37  lr: 0.000003  min_lr: 0.000000  loss: 5.0871 (5.1399)  class_acc: 0.0000 (0.0000)  loss_scale: 16384.0000 (3670.2805)  weight_decay: 0.0500 (0.0500)  time: 0.3738  data: 0.0003  max mem: 15572
+[2025-01-15 13:26:06,114] [INFO] [logging.py:96:log_dist] [Rank 0] step=1000, skipped=0, lr=[3.2306541515702744e-08, 3.2306541515702744e-08, 4.615220216528964e-08, 4.615220216528964e-08, 6.59317173789852e-08, 6.59317173789852e-08, 9.418816768426457e-08, 9.418816768426457e-08, 1.3455452526323513e-07, 1.3455452526323513e-07, 1.9222075037605018e-07, 1.9222075037605018e-07, 2.7460107196578597e-07, 2.7460107196578597e-07, 3.922872456654086e-07, 3.922872456654086e-07, 5.604103509505837e-07, 5.604103509505837e-07, 8.005862156436911e-07, 8.005862156436911e-07, 1.1436945937767016e-06, 1.1436945937767016e-06, 1.6338494196810024e-06, 1.6338494196810024e-06, 2.3340705995442894e-06, 2.3340705995442894e-06, 3.3343865707775563e-06, 3.3343865707775563e-06], mom=[[0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999], [0.9, 0.999]]
+[2025-01-15 13:26:06,115] [INFO] [timer.py:260:stop] epoch=0/micro_step=1000/global_step=1000, RunningAvgSamplesPerSec=33.82141456394212, CurrSamplesPerSec=32.91711280658085, MemAllocated=0.4GB, MaxMemAllocated=15.21GB
+Epoch: [0]  [1000/2809]  eta: 0:11:33  lr: 0.000003  min_lr: 0.000000  loss: 5.0871 (5.1394)  class_acc: 0.0000 (0.0000)  loss_scale: 16384.0000 (3797.2907)  weight_decay: 0.0500 (0.0500)  time: 0.3746  data: 0.0003  max mem: 15572
+Epoch: [0]  [1010/2809]  eta: 0:11:29  lr: 0.000003  min_lr: 0.000000  loss: 5.0946 (5.1391)  class_acc: 0.0000 (0.0000)  loss_scale: 16384.0000 (3921.7883)  weight_decay: 0.0500 (0.0500)  time: 0.3811  data: 0.0003  max mem: 15572
+Epoch: [0]  [1020/2809]  eta: 0:11:25  lr: 0.000003  min_lr: 0.000000  loss: 5.0967 (5.1387)  class_acc: 0.0000 (0.0000)  loss_scale: 16384.0000 (4043.8472)  weight_decay: 0.0500 (0.0500)  time: 0.3796  data: 0.0003  max mem: 15572
+[2025-01-15 13:26:15,611] [INFO] [fused_optimizer.py:352:_update_scale] No Grad overflow for 128 iterations
+[2025-01-15 13:26:15,611] [INFO] [fused_optimizer.py:353:_update_scale] Increasing dynamic loss scale from 16384 to 32768
+Epoch: [0]  [1030/2809]  eta: 0:11:21  lr: 0.000003  min_lr: 0.000000  loss: 5.0918 (5.1383)  class_acc: 0.0000 (0.0000)  loss_scale: 16384.0000 (4274.7779)  weight_decay: 0.0500 (0.0500)  time: 0.3729  data: 0.0002  max mem: 15572
+Epoch: [0]  [1040/2809]  eta: 0:11:17  lr: 0.000003  min_lr: 0.000000  loss: 5.1019 (5.1380)  class_acc: 0.0000 (0.0000)  loss_scale: 32768.0000 (4548.4880)  weight_decay: 0.0500 (0.0500)  time: 0.3739  data: 0.0002  max mem: 15572
+Epoch: [0]  [1050/2809]  eta: 0:11:14  lr: 0.000004  min_lr: 0.000000  loss: 5.1019 (5.1377)  class_acc: 0.0000 (0.0000)  loss_scale: 32768.0000 (4816.9895)  weight_decay: 0.0500 (0.0500)  time: 0.3773  data: 0.0003  max mem: 15572
+Epoch: [0]  [1060/2809]  eta: 0:11:10  lr: 0.000004  min_lr: 0.000000  loss: 5.0847 (5.1372)  class_acc: 0.0000 (0.0000)  loss_scale: 32768.0000 (5080.4298)  weight_decay: 0.0500 (0.0500)  time: 0.4045  data: 0.0004  max mem: 15572
+Epoch: [0]  [1070/2809]  eta: 0:11:08  lr: 0.000004  min_lr: 0.000000  loss: 5.0797 (5.1367)  class_acc: 0.0000 (0.0000)  loss_scale: 32768.0000 (5338.9505)  weight_decay: 0.0500 (0.0500)  time: 0.4353  data: 0.0006  max mem: 15572
+Epoch: [0]  [1080/2809]  eta: 0:11:05  lr: 0.000004  min_lr: 0.000000  loss: 5.0797 (5.1362)  class_acc: 0.0000 (0.0000)  loss_scale: 32768.0000 (5592.6883)  weight_decay: 0.0500 (0.0500)  time: 0.4439  data: 0.0008  max mem: 15572
+Epoch: [0]  [1090/2809]  eta: 0:11:01  lr: 0.000004  min_lr: 0.000000  loss: 5.0779 (5.1357)  class_acc: 0.0000 (0.0000)  loss_scale: 32768.0000 (5841.7745)  weight_decay: 0.0500 (0.0500)  time: 0.4320  data: 0.0007  max mem: 15572
+Epoch: [0]  [1100/2809]  eta: 0:10:58  lr: 0.000004  min_lr: 0.000000  loss: 5.1011 (5.1355)  class_acc: 0.0000 (0.0000)  loss_scale: 32768.0000 (6086.3361)  weight_decay: 0.0500 (0.0500)  time: 0.4312  data: 0.0006  max mem: 15572
+Epoch: [0]  [1110/2809]  eta: 0:10:55  lr: 0.000004  min_lr: 0.000000  loss: 5.0970 (5.1349)  class_acc: 0.0000 (0.0000)  loss_scale: 32768.0000 (6326.4950)  weight_decay: 0.0500 (0.0500)  time: 0.4277  data: 0.0006  max mem: 15572
+Epoch: [0]  [1120/2809]  eta: 0:10:51  lr: 0.000004  min_lr: 0.000000  loss: 5.0733 (5.1345)  class_acc: 0.0000 (0.0000)  loss_scale: 32768.0000 (6562.3693)  weight_decay: 0.0500 (0.0500)  time: 0.4088  data: 0.0005  max mem: 15572
+Epoch: [0]  [1130/2809]  eta: 0:10:48  lr: 0.000004  min_lr: 0.000000  loss: 5.0808 (5.1340)  class_acc: 0.0000 (0.0000)  loss_scale: 32768.0000 (6794.0725)  weight_decay: 0.0500 (0.0500)  time: 0.4064  data: 0.0004  max mem: 15572
+Epoch: [0]  [1140/2809]  eta: 0:10:44  lr: 0.000004  min_lr: 0.000000  loss: 5.0878 (5.1336)  class_acc: 0.0000 (0.0000)  loss_scale: 32768.0000 (7021.7143)  weight_decay: 0.0500 (0.0500)  time: 0.3929  data: 0.0003  max mem: 15572
+Epoch: [0]  [1150/2809]  eta: 0:10:40  lr: 0.000004  min_lr: 0.000000  loss: 5.0933 (5.1332)  class_acc: 0.0000 (0.0000)  loss_scale: 32768.0000 (7245.4005)  weight_decay: 0.0500 (0.0500)  time: 0.3787  data: 0.0003  max mem: 15572
+[2025-01-15 13:27:07,780] [INFO] [fused_optimizer.py:352:_update_scale] No Grad overflow for 128 iterations
+[2025-01-15 13:27:07,780] [INFO] [fused_optimizer.py:353:_update_scale] Increasing dynamic loss scale from 32768 to 65536
+Epoch: [0]  [1160/2809]  eta: 0:10:36  lr: 0.000004  min_lr: 0.000000  loss: 5.0942 (5.1329)  class_acc: 0.0000 (0.0000)  loss_scale: 32768.0000 (7719.2489)  weight_decay: 0.0500 (0.0500)  time: 0.3753  data: 0.0002  max mem: 15572
+Epoch: [0]  [1170/2809]  eta: 0:10:32  lr: 0.000004  min_lr: 0.000000  loss: 5.0790 (5.1323)  class_acc: 0.0000 (0.0000)  loss_scale: 65536.0000 (8212.9872)  weight_decay: 0.0500 (0.0500)  time: 0.3752  data: 0.0002  max mem: 15572
+Epoch: [0]  [1180/2809]  eta: 0:10:28  lr: 0.000004  min_lr: 0.000000  loss: 5.0785 (5.1320)  class_acc: 0.0000 (0.0000)  loss_scale: 65536.0000 (8698.3641)  weight_decay: 0.0500 (0.0500)  time: 0.3771  data: 0.0002  max mem: 15572
+Epoch: [0]  [1190/2809]  eta: 0:10:24  lr: 0.000004  min_lr: 0.000000  loss: 5.0943 (5.1315)  class_acc: 0.0000 (0.0000)  loss_scale: 65536.0000 (9175.5903)  weight_decay: 0.0500 (0.0500)  time: 0.3778  data: 0.0002  max mem: 15572
+Epoch: [0]  [1200/2809]  eta: 0:10:20  lr: 0.000004  min_lr: 0.000000  loss: 5.0858 (5.1312)  class_acc: 0.0000 (0.0000)  loss_scale: 65536.0000 (9644.8693)  weight_decay: 0.0500 (0.0500)  time: 0.3750  data: 0.0002  max mem: 15572
+Epoch: [0]  [1210/2809]  eta: 0:10:16  lr: 0.000004  min_lr: 0.000000  loss: 5.0906 (5.1308)  class_acc: 0.0000 (0.0000)  loss_scale: 65536.0000 (10106.3980)  weight_decay: 0.0500 (0.0500)  time: 0.3716  data: 0.0002  max mem: 15572
+Epoch: [0]  [1220/2809]  eta: 0:10:12  lr: 0.000004  min_lr: 0.000000  loss: 5.0849 (5.1303)  class_acc: 0.0000 (0.0000)  loss_scale: 65536.0000 (10560.3669)  weight_decay: 0.0500 (0.0500)  time: 0.3762  data: 0.0003  max mem: 15572
+Epoch: [0]  [1230/2809]  eta: 0:10:08  lr: 0.000004  min_lr: 0.000000  loss: 5.0784 (5.1300)  class_acc: 0.0000 (0.0000)  loss_scale: 65536.0000 (11006.9602)  weight_decay: 0.0500 (0.0500)  time: 0.3911  data: 0.0004  max mem: 15572
+Epoch: [0]  [1240/2809]  eta: 0:10:05  lr: 0.000004  min_lr: 0.000000  loss: 5.0918 (5.1297)  class_acc: 0.0000 (0.0000)  loss_scale: 65536.0000 (11446.3562)  weight_decay: 0.0500 (0.0500)  time: 0.4163  data: 0.0005  max mem: 15572
+Epoch: [0]  [1250/2809]  eta: 0:10:02  lr: 0.000004  min_lr: 0.000000  loss: 5.0865 (5.1293)  class_acc: 0.0000 (0.0000)  loss_scale: 65536.0000 (11878.7274)  weight_decay: 0.0500 (0.0500)  time: 0.4480  data: 0.0006  max mem: 15572
+Epoch: [0]  [1260/2809]  eta: 0:09:59  lr: 0.000004  min_lr: 0.000000  loss: 5.0849 (5.1291)  class_acc: 0.0000 (0.0000)  loss_scale: 65536.0000 (12304.2411)  weight_decay: 0.0500 (0.0500)  time: 0.4406  data: 0.0005  max mem: 15572
+Epoch: [0]  [1270/2809]  eta: 0:09:55  lr: 0.000004  min_lr: 0.000000  loss: 5.0753 (5.1286)  class_acc: 0.0000 (0.0000)  loss_scale: 65536.0000 (12723.0590)  weight_decay: 0.0500 (0.0500)  time: 0.4107  data: 0.0004  max mem: 15572
+[2025-01-15 13:27:58,802] [INFO] [fused_optimizer.py:352:_update_scale] No Grad overflow for 128 iterations
+[2025-01-15 13:27:58,802] [INFO] [fused_optimizer.py:353:_update_scale] Increasing dynamic loss scale from 65536 to 131072
+Epoch: [0]  [1280/2809]  eta: 0:09:52  lr: 0.000004  min_lr: 0.000000  loss: 5.0753 (5.1284)  class_acc: 0.0000 (0.0000)  loss_scale: 65536.0000 (13186.4980)  weight_decay: 0.0500 (0.0500)  time: 0.4160  data: 0.0004  max mem: 15572
+Epoch: [0]  [1290/2809]  eta: 0:09:48  lr: 0.000004  min_lr: 0.000000  loss: 5.1068 (5.1282)  class_acc: 0.0000 (0.0000)  loss_scale: 131072.0000 (14099.6313)  weight_decay: 0.0500 (0.0500)  time: 0.4348  data: 0.0005  max mem: 15572
+Epoch: [0]  [1300/2809]  eta: 0:09:47  lr: 0.000004  min_lr: 0.000000  loss: 5.0773 (5.1277)  class_acc: 0.0000 (0.0000)  loss_scale: 131072.0000 (14998.7271)  weight_decay: 0.0500 (0.0500)  time: 0.5312  data: 0.0757  max mem: 15572

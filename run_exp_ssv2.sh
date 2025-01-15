@@ -1,5 +1,8 @@
 # bash /home/maggie/VideoMAE_curriculum/scripts/ssv2/videomae_vit_small_patch16_224_tubemasking_ratio_0.9_epoch_2400/finetune.sh
 # bash /home/maggie/VideoMAE_curriculum/scripts/ssv2/videomae_vit_small_patch16_224_tubemasking_ratio_0.9_epoch_2400/finetune.sh
 
-bash /home/maggie/VideoMAE_curriculum/scripts/ssv2/videomae_vit_small_patch16_224_tubemasking_ratio_0.9_epoch_2400/finetune_random.sh
-bash /home/maggie/VideoMAE_curriculum/scripts/ssv2/videomae_vit_small_patch16_224_tubemasking_ratio_0.9_epoch_2400/finetune_random.sh
+# bash /home/maggie/VideoMAE_curriculum/scripts/ssv2/videomae_vit_small_patch16_224_tubemasking_ratio_0.9_epoch_2400/finetune_random.sh
+# bash /home/maggie/VideoMAE_curriculum/scripts/ssv2/videomae_vit_small_patch16_224_tubemasking_ratio_0.9_epoch_2400/finetune_random.sh
+
+bash /home/maggie/VideoMAE_curriculum/scripts/ssv2/videomae_vit_small_patch16_224_tubemasking_ratio_0.9_epoch_2400/finetune_mask_curriculum_threshold_0.sh
+bash /home/maggie/VideoMAE_curriculum/scripts/ssv2/videomae_vit_small_patch16_224_tubemasking_ratio_0.9_epoch_2400/finetune_mask_curriculum_threshold_0.sh
