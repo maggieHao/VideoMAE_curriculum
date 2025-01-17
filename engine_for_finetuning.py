@@ -32,10 +32,11 @@ def train_class_batch_mask(model, samples, target, criterion, threshold = 0):
         mask = correct_class < threshold
     # if mask.sum() != target.size(0):
         # print(f'mask shape as {mask.sum()}.')
-    outputs = outputs[mask]
-    target = target[mask]
-    loss = criterion(outputs, target)
-    return loss, outputs, target
+    outputs_mask = outputs[mask]
+    target_mask = target[mask]
+    loss = criterion(outputs_mask, target_mask)
+    num_samples = mask.sum()
+    return loss, outputs_mask, target_mask, outputs, target, num_samples
 
 def get_loss_scale_for_deepspeed(model):
     optimizer = model.optimizer
@@ -350,11 +351,11 @@ def train_one_epoch_mask(threshold, model: torch.nn.Module, criterion: torch.nn.
 
         if loss_scaler is None:
             samples = samples.half()
-            loss, output, targets = train_class_batch_mask(
+            loss, output, targets, output_original, targets_original, num_samples = train_class_batch_mask(
                 model, samples, targets, criterion, threshold)
         else:
             with torch.cuda.amp.autocast():
-                loss, output, targets = train_class_batch_mask(
+                loss, output, targets, output_original, targets_original, num_samples = train_class_batch_mask(
                     model, samples, targets, criterion, threshold)
 
         loss_value = loss.item()
@@ -395,7 +396,7 @@ def train_one_epoch_mask(threshold, model: torch.nn.Module, criterion: torch.nn.
         else:
             # class_acc = None
             # curriculum learning 
-            class_acc = (output.max(-1)[-1] == targets.max(-1)[-1]).float().mean()
+            class_acc = (output_original.max(-1)[-1] == targets_original.max(-1)[-1]).float().mean()
         metric_logger.update(loss=loss_value)
         metric_logger.update(class_acc=class_acc)
         metric_logger.update(loss_scale=loss_scale_value)
@@ -417,6 +418,7 @@ def train_one_epoch_mask(threshold, model: torch.nn.Module, criterion: torch.nn.
         if log_writer is not None:
             log_writer.update(loss=loss_value, head="loss")
             log_writer.update(class_acc=class_acc, head="loss")
+            log_writer.update(num_samples=num_samples, head="loss")
             log_writer.update(loss_scale=loss_scale_value, head="opt")
             log_writer.update(lr=max_lr, head="opt")
             log_writer.update(min_lr=min_lr, head="opt")

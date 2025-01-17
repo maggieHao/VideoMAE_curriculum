@@ -1,5 +1,5 @@
 # Set the path to save checkpoints
-OUTPUT_DIR='/home/maggie/VideoMAE_checkpoints_curriculum/ssv2_small_20data_mask_curriculum_threshold_0_2gpus/'
+OUTPUT_DIR='/home/maggie/VideoMAE_checkpoints_curriculum/ssv2_small_20data_mask_curriculum_threshold_30/'
 # path to SSV2 annotation file (train.csv/val.csv/test.csv)
 DATA_PATH='/home/maggie/VideoMAE_curriculum/labels/ssv2'
 # path to pretrain model
@@ -8,7 +8,7 @@ MODEL_PATH='/home/maggie/VideoMAE_checkpoints/pretrain_checkpoint/pretrain_check
 # batch_size can be adjusted according to number of GPUs
 # this script is for 32 GPUs (4 nodes x 8 GPUs)
 OMP_NUM_THREADS=1 python -m torch.distributed.launch --nproc_per_node=2 \
-    --master_port 12322 --nnodes=1  \
+    --master_port 12321 --nnodes=1  \
     run_class_finetuning.py \
     --model vit_small_patch16_224 \
     --data_set SSV2 \
@@ -32,5 +32,6 @@ OMP_NUM_THREADS=1 python -m torch.distributed.launch --nproc_per_node=2 \
     --test_num_segment 2 \
     --test_num_crop 3 \
     --dist_eval \
+    --mask_curriculum_threshold 30 \
     --enable_deepspeed 
 
