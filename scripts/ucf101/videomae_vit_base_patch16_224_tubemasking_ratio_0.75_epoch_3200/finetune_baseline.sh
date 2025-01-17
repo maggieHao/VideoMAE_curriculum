@@ -1,14 +1,14 @@
 # Set the path to save checkpoints
-OUTPUT_DIR='YOUR_PATH/ucf_videomae_pretrain_base_patch16_224_frame_16x4_tube_mask_0.75_videos_e3200/eval_lr_5e-4_epoch_100'
+OUTPUT_DIR='/home/maggie/VideoMAE_checkpoints_curriculum/ucf101_baseline'
 # path to UCF101 annotation file (train.csv/val.csv/test.csv)
-DATA_PATH='YOUR_PATH/list_ucf'
+DATA_PATH='/home/maggie/VideoMAE_curriculum/labels/ucf101'
 # path to pretrain model
-MODEL_PATH='YOUR_PATH/ucf_videomae_pretrain_base_patch16_224_frame_16x4_tube_mask_0.75_videos_e3200/checkpoint.pth'
+MODEL_PATH='/home/maggie/VideoMAE_checkpoints/pretrain_checkpoint_ucf101/checkpoint.pth'
 
 # batch_size can be adjusted according to number of GPUs
 # this script is for 8 GPUs (1 nodes x 8 GPUs)
-OMP_NUM_THREADS=1 python3 -m torch.distributed.launch --nproc_per_node=8 \
-    --master_port 12320  run_class_finetuning.py \
+OMP_NUM_THREADS=1 python3 -m torch.distributed.launch --nproc_per_node=2 \
+    --master_port 12320  run_class_finetuning_baseline.py \
     --model vit_base_patch16_224 \
     --data_path ${DATA_PATH} \
     --finetune ${MODEL_PATH} \

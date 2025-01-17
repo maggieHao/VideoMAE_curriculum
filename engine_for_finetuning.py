@@ -25,10 +25,11 @@ def train_class_batch_mask(model, samples, target, criterion, threshold = 0):
         mask = pred_index != target_index
     else:
         prob = torch.softmax(outputs, dim=1)
-        # print(f'prob shape as {prob}.')
+        print(f'prob shape as {prob.shape}.')
+        print(f'prob shape as {prob[0].tolist()}.')
         correct_class = prob[torch.arange(target.size(0)), target_index]
-        # print(f'correct_class shape as {correct_class}.')
-        # print(f'correct_class shape as {correct_class.shape}.')
+        print(f'correct_class shape as {correct_class[0]}.')
+        print(f'correct_class shape as {correct_class.shape}.')
         mask = correct_class < threshold
     # if mask.sum() != target.size(0):
         # print(f'mask shape as {mask.sum()}.')
@@ -397,6 +398,9 @@ def train_one_epoch_mask(threshold, model: torch.nn.Module, criterion: torch.nn.
             # class_acc = None
             # curriculum learning 
             class_acc = (output_original.max(-1)[-1] == targets_original.max(-1)[-1]).float().mean()
+            print(f'output_original.max(-1)[-1] as {output_original.max(-1)[-1]}.')
+            print(f'targets_original.max(-1)[-1] as {targets_original.max(-1)[-1]}.')
+            print(f'class_acc as {class_acc}.')
         metric_logger.update(loss=loss_value)
         metric_logger.update(class_acc=class_acc)
         metric_logger.update(loss_scale=loss_scale_value)
